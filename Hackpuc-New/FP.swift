@@ -60,7 +60,7 @@ class FP: NSObject {
     
     class func normalFS() -> CGFloat {
             
-            return CGFloat(Int(56 * wP()))
+            return CGFloat(Int(26 * wP()))
             
         }
     

@@ -8,8 +8,7 @@
 
 import Foundation
 
-class LogInView: UIView {
-    
+class LogInView: UIView , UITextFieldDelegate {
     
     
     override init(frame: CGRect) {
@@ -30,6 +29,7 @@ class LogInView: UIView {
         
         //Delcarações
         var lPar1: UILabel?
+        var tFName: UITextField?
         
         // Units
         let yOffset:        CGFloat = 50
@@ -52,6 +52,14 @@ class LogInView: UIView {
         let lP1X: CGFloat = 2*eleBor
         let lP1Y: CGFloat = 10*eleBor
         
+        //TextField
+        //Name
+        let fNameW: CGFloat = 281.0
+        let fNameH: CGFloat = 58.0
+        let fNameX: CGFloat = 63.0
+        let fNameY: CGFloat = 444.0
+        
+        
         //Botao de Continuar
         let bConW: CGFloat = FP.wP() * 281
         let bConH: CGFloat = FP.hP() * 69
@@ -64,15 +72,32 @@ class LogInView: UIView {
         let penaX: CGFloat = (FP.mW() - penaW)/2
         let penaY: CGFloat = 60
         
-        //Aqui se criam os componentes
+        //Aqui se criam os componentes **************************************
         
         //Label Parte 1
         lPar1 = UILabel(frame: CGRectMake(lP1X,lP1Y,lP1W,lP1H))
         lPar1?.text = lPar1Tx
-        lPar1?.font = UIFont(name: FP.fontName(), size: FP.normalFS())
+        lPar1?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         lPar1?.textColor = FPColor.wColor()
         lPar1?.textAlignment = .Natural
         lPar1?.numberOfLines = 99
+        
+        //TextField Name
+        //FieldName
+        tFName = UITextField(frame: CGRectMake(fNameX, fNameY, fNameW, fNameH))
+        tFName?.placeholder = NSLocalizedString("Seu nome", comment: "Nome")
+        tFName!.font = UIFont.systemFontOfSize(29)
+        tFName!.borderStyle = UITextBorderStyle.RoundedRect
+        tFName!.autocorrectionType = UITextAutocorrectionType.No
+        tFName!.keyboardType = UIKeyboardType.Default
+        tFName!.returnKeyType = UIReturnKeyType.Done
+        tFName!.clearButtonMode = UITextFieldViewMode.WhileEditing;
+        tFName!.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        tFName!.backgroundColor = FPColor.wColor()
+        tFName?.delegate = self
+        tFName?.hidden = false
+        tFName?.alpha = 0
+        
         
         //Continue Button
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
@@ -92,6 +117,7 @@ class LogInView: UIView {
         self.addSubview(bCon)
         self.addSubview(pena)
         self.addSubview(lPar1!)
+        self.addSubview(tFName!)
         
     }
 }

@@ -23,6 +23,7 @@
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
+		F27F50151C1C72B20075636A /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F27F50141C1C72B20075636A /* GeosansLight.ttf */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -72,6 +73,7 @@
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
 		F27F50121C1C57C80075636A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		F27F50141C1C72B20075636A /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		51553CC41C1BF9D000424CB8 = {
 			isa = PBXGroup;
 			children = (
+				F27F50141C1C72B20075636A /* GeosansLight.ttf */,
 				51553CCF1C1BF9D100424CB8 /* Hackpuc-New */,
 				51553CE41C1BF9D100424CB8 /* Hackpuc-NewTests */,
 				51553CEF1C1BF9D100424CB8 /* Hackpuc-NewUITests */,
@@ -341,6 +344,7 @@
 			files = (
 				5151EDE81C1C5380004CBF38 /* Background.png in Resources */,
 				51553CDB1C1BF9D100424CB8 /* LaunchScreen.storyboard in Resources */,
+				F27F50151C1C72B20075636A /* GeosansLight.ttf in Resources */,
 				51553CD81C1BF9D100424CB8 /* Assets.xcassets in Resources */,
 				5151EDF31C1C57E0004CBF38 /* Pena.png in Resources */,
 			);
