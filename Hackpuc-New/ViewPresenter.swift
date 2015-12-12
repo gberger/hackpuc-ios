@@ -37,7 +37,7 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
         
         if(authorized == CLAuthorizationStatus.Restricted || authorized == CLAuthorizationStatus.Denied) {
             
-            //Denied to use the position
+            //Denied to use the position test commit
             
         } else {
             
