@@ -11,16 +11,16 @@ import Contacts
 
 class ContactsPresenter: UIViewController {
     
-    var myView: ModelView {
+    var myView: ContactsView {
         
         get {
-            return self.view as! ModelView
+            return self.view as! ContactsView
         }
     }
     
     override func viewDidLoad() {
         
-        self.view = ModelView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+        self.view = ContactsView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib. Teste commit

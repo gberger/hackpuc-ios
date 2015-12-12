@@ -29,7 +29,7 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //Delcarações
         var lPar1: UILabel?
-        var tFName: UITextField?
+        var tFName = UITextField()
         
         // Units
         let yOffset:        CGFloat = 50
@@ -54,10 +54,10 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //TextField
         //Name
-        let fNameW: CGFloat = 281.0
-        let fNameH: CGFloat = 58.0
-        let fNameX: CGFloat = 63.0
-        let fNameY: CGFloat = 444.0
+        let fNameW: CGFloat = FP.wP() * 281
+        let fNameH: CGFloat = FP.hP() * 69
+        let fNameX: CGFloat = (FP.mW() - fNameW)/2
+        let fNameY: CGFloat = FP.mH() - fNameH - 300
         
         
         //Botao de Continuar
@@ -85,18 +85,20 @@ class LogInView: UIView , UITextFieldDelegate {
         //TextField Name
         //FieldName
         tFName = UITextField(frame: CGRectMake(fNameX, fNameY, fNameW, fNameH))
-        tFName?.placeholder = NSLocalizedString("Seu nome", comment: "Nome")
-        tFName!.font = UIFont.systemFontOfSize(29)
-        tFName!.borderStyle = UITextBorderStyle.RoundedRect
-        tFName!.autocorrectionType = UITextAutocorrectionType.No
-        tFName!.keyboardType = UIKeyboardType.Default
-        tFName!.returnKeyType = UIReturnKeyType.Done
-        tFName!.clearButtonMode = UITextFieldViewMode.WhileEditing;
-        tFName!.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        tFName!.backgroundColor = FPColor.wColor()
-        tFName?.delegate = self
-        tFName?.hidden = false
-        tFName?.alpha = 0
+        tFName.placeholder = NSLocalizedString("         Seu nome", comment: "Nome")
+        //tFName.center = CGPointMake(fNameW, fNameH)
+        tFName.font = UIFont.systemFontOfSize(29)
+        tFName.borderStyle = UITextBorderStyle.RoundedRect
+        //tFName.autocorrectionType = UITextAutocorrectionType.No
+        tFName.keyboardType = UIKeyboardType.Default
+        tFName.returnKeyType = UIReturnKeyType.Done
+        tFName.clearButtonMode = UITextFieldViewMode.WhileEditing;
+        tFName.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        tFName.borderStyle = UITextBorderStyle.Line
+        tFName.borderStyle = UITextBorderStyle.RoundedRect
+        tFName.backgroundColor = FPColor.wColor()
+        tFName.delegate = self
+       
         
         //Continue Button
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
@@ -114,7 +116,7 @@ class LogInView: UIView , UITextFieldDelegate {
         self.addSubview(bCon)
         self.addSubview(pena)
         self.addSubview(lPar1!)
-        self.addSubview(tFName!)
+        self.addSubview(tFName)
         
     }
 }
