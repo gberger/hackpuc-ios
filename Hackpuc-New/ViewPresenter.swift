@@ -16,16 +16,18 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var numero = 0
     
-    var myView: UIView {
+    var myView: ReadyView {
+        
         get {
-            return self.view as UIView
+            return self.view as! ReadyView
         }
     }
     
     override func viewDidLoad() {
         
+        self.view = ReadyView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+        
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -34,10 +36,10 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
         super.viewDidAppear(animated)
         
         let authorized = CLLocationManager.authorizationStatus()
-        
+
         if(authorized == CLAuthorizationStatus.Restricted || authorized == CLAuthorizationStatus.Denied) {
             
-            //Denied to use the position test commit
+            //Denied to use the position test
             
         } else {
             
@@ -51,29 +53,39 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             locationManager?.pausesLocationUpdatesAutomatically = false
             locationManager?.allowsBackgroundLocationUpdates = true
         }
-        
     }
+    
+    //MARK: LOCATION MANAGER
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let lat = locations[locations.count - 1].coordinate.latitude
         let lon = locations[locations.count - 1].coordinate.longitude
         
-        var data: [String: AnyObject]!
+        var info = ""
         
         if(UIApplication.sharedApplication().applicationState == UIApplicationState.Active) {
             
-            data = ["latitude": lat, "longitude": lon, "text": "Foreground Running"]
-            numero++
+            info = "Running in foreground mode."
             
         } else {
             
-            data = ["latitude": lat, "longitude": lon, "text": "Background Running"]
-            numero++
-            
+            info = "Running in background mode."
         }
         
-        Alamofire.request(.POST, "http://2bdf1396.ngrok.com", parameters: data, encoding: .JSON)
+        let data = ["latitude": lat, "longitude": lon, "obs": info, "userId": "id"]
+        
+        Alamofire.request(.POST, "http://2bdf1396.ngrok.com", parameters: data as? [String : AnyObject], encoding: .JSON).responseJSON { response in
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+            
+            //Get session ID and token
+            //See if is connected to this session ID
+                //If not, connect
+                //If yes, just proceed
+        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

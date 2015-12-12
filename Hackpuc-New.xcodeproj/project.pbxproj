@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */; };
+		5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE41C1C36A6004CBF38 /* ReadyView.swift */; };
 		51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CD01C1BF9D100424CB8 /* AppDelegate.swift */; };
 		51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */; };
 		51553CD81C1BF9D100424CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51553CD71C1BF9D100424CB8 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		01D949FE20E73058DCF34A2B /* Pods-Hackpuc-New.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.release.xcconfig"; sourceTree = "<group>"; };
 		15E678EC0EFE471DC83D19A1 /* Pods-Hackpuc-New.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.debug.xcconfig"; sourceTree = "<group>"; };
 		5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackpuc-New-Bridging-Header.h"; sourceTree = "<group>"; };
+		5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOKPresenter.swift; sourceTree = "<group>"; };
+		5151EDE41C1C36A6004CBF38 /* ReadyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		51553CCD1C1BF9D100424CB8 /* Hackpuc-New.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackpuc-New.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51553CD01C1BF9D100424CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		51553CFE1C1BF9E200424CB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 			children = (
 				51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */,
 				51553D031C1BFB4300424CB8 /* MYOPresenter.swift */,
+				5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -373,8 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,
+				5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */,
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
+				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
