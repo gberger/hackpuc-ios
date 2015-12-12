@@ -18,7 +18,7 @@ class MYOPresenter: UIViewController {
     
     override func viewDidLoad() {
         
-        //        presented = false
+        //          presented = false
         
         let poseObserver = NSNotificationCenter.defaultCenter()
         poseObserver.addObserver(self, selector: Selector("didRecievePoseChange:"), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
