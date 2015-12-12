@@ -73,7 +73,12 @@ class SetupPresenter: UIViewController, SetupViewProtocol, CLLocationManagerDele
             
         } else if(step == 3) {
             
-            self.myView.label?.text = "Final"
+            let newVC = LogInPresenter()
+            
+            //Se usuario tiver informacoes, passa para a tela do Myo
+            //Senao passa para a tela inicial
+        
+            presentViewController(newVC, animated: false, completion: nil)
         }
     }
     
@@ -85,6 +90,7 @@ class SetupPresenter: UIViewController, SetupViewProtocol, CLLocationManagerDele
             
             locationManager = CLLocationManager()
             locationManager?.requestAlwaysAuthorization()
+            locationManager?.delegate = self
             
         } else {
             
@@ -131,16 +137,18 @@ class SetupPresenter: UIViewController, SetupViewProtocol, CLLocationManagerDele
             
             AVAudioSession.sharedInstance().requestRecordPermission { (value) -> Void in
                 
-                if(value == true) {
-                    
-                    self.nextStep()
-                }
+                self.nextStep()
             }
         
         } else {
             
             nextStep()
         }
+    }
+    
+    func askPushPermission() {
+        
+        
     }
 }
 
