@@ -10,12 +10,17 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate {
+class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewProtocol {
     
     var locationManager: CLLocationManager?
     
+    var myo: [TLMMyo] = []
+    
     var sendingInfo = false
     var waitingResponse = false
+    var presented = false
+    var begin = false
+    var waiting = false
     
     var APIURL = "http://6f4ca100.ngrok.com"
     
@@ -31,17 +36,28 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    /******************************/
+    //MARK: ViewController MANAGER
+    /******************************/
+    
     override func viewDidLoad() {
         
         self.view = MyoConnectView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+        self.myView.delegate = self
+        
+        let poseObserver = NSNotificationCenter.defaultCenter()
+        poseObserver.addObserver(self, selector: Selector("didRecievePoseChange:"), name: TLMMyoDidReceivePoseChangedNotification, object: nil)
+        
+        let connectionObserver = NSNotificationCenter.defaultCenter()
+        connectionObserver.addObserver(self, selector: Selector("connectionEvent:"), name: TLMHubDidConnectDeviceNotification, object: nil)
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func startPanic() {
-        
-        locationManager?.startUpdatingLocation()
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,7 +83,9 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    /******************************/
     //MARK: LOCATION MANAGER
+    /******************************/
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -155,9 +173,124 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate {
         print(error)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func startPanic() {
+        
+        locationManager?.startUpdatingLocation()
+        self.emergency()
+    }
+    
+    /******************************/
+    //MARK: Myo MANAGER
+    /******************************/
+    
+    func connectMyo() {
+        
+        if !presented{
+            
+            let navigationController = TLMSettingsViewController.settingsInNavigationController() as UINavigationController
+            self.presentViewController(navigationController, animated: true, completion: nil)
+            presented = true
+        }
+    }
+    
+    func connectionEvent(notification: NSNotification){
+        
+        myo = TLMHub.sharedHub().myoDevices() as! [TLMMyo]
+        self.myView.cInfo?.backgroundColor = FPColor.gColor()
+        self.myView.cInfo?.text = "Conectado"
+        self.myView.myo?.image = UIImage(named: "MyoOn.png")
+    }
+    
+    func didRecievePoseChange(notification: NSNotification){
+        
+        var dict:Dictionary<String,TLMPose> = notification.userInfo as! Dictionary<String,TLMPose>
+        
+        let pose = dict[kTLMKeyPose]
+        switch pose!.type {
+            
+        case TLMPoseType.DoubleTap :
+            
+            print("double")
+            break;
+            
+        case TLMPoseType.FingersSpread:
+            print("fingers")
+            break;
+            
+        case TLMPoseType.Fist:
+            print("fist")
+            if !begin { self.startPanic() ; begin = true }
+            if begin && waiting { self.userAnswered() ; waiting = false }
+            break;
+            
+            
+        case TLMPoseType.WaveIn:
+            print("wavvein")
+            
+            break;
+            
+        case TLMPoseType.WaveOut:
+            print("waveout")
+            
+            break;
+            
+        case TLMPoseType.Unknown:
+            
+            print("Unknown")
+            break;
+            
+        default:
+            break;
+        }
+    }
+    
+    func emergency() {
+        print("fudeu")
+        self.myo[0].vibrateWithLength(TLMVibrationLength.Short)
+        
+        delay(10, closure: {
+            
+            self.feedback()
+        })
+    }
+    
+    func feedback() {
+        
+        waiting = true
+        
+        self.myo[0].vibrateWithLength(TLMVibrationLength.Long)
+        
+        delay(10, closure: {
+            
+            if self.waiting {
+                self.myo[0].vibrateWithLength(TLMVibrationLength.Long)
+                self.userDidntAnswered()
+                self.waiting = false
+            }
+        })
+    }
+    
+    func userAnswered() {
+        
+        print("I'm fine")
+        self.myo[0].vibrateWithLength(TLMVibrationLength.Short)
+        delay(15, closure: {
+            self.feedback()
+        })
+    }
+    
+    func userDidntAnswered() {
+        
+        print("send SMS")
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
 }
 
