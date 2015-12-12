@@ -3,8 +3,8 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) ${PODS_ROOT}/OpenTok "${PODS_ROOT}/OpenTok
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/OpenTok"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/OpenTok"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "AVFoundation" -framework "Alamofire" -framework "AudioToolbox" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreVideo" -framework "Foundation" -framework "GLKit" -framework "OpenGLES" -framework "OpenTok" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -framework "VideoToolbox"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RealmSwift.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/OpenTok"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -framework "AVFoundation" -framework "Alamofire" -framework "AudioToolbox" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreVideo" -framework "Foundation" -framework "GLKit" -framework "OpenGLES" -framework "OpenTok" -framework "QuartzCore" -framework "Realm" -framework "RealmSwift" -framework "SystemConfiguration" -framework "UIKit" -framework "VideoToolbox"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Hackpuc-New
 PODS_ROOT = ${SRCROOT}/Pods

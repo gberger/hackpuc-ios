@@ -21,6 +21,10 @@
 		51553CF11C1BF9D100424CB8 /* Hackpuc_NewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */; };
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
 		51FF04B41C1C7AD000C4A946 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */; };
+		94541FD51C1C9C9A0054D142 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD41C1C9C9A0054D142 /* MyoKit.framework */; };
+		94541FD61C1C9CA10054D142 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */; };
+		94541FD71C1C9CA60054D142 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD21C1C9C340054D142 /* SystemConfiguration.framework */; };
+		94541FD91C1C9D6C0054D142 /* RealmContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94541FD81C1C9D6C0054D142 /* RealmContacts.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
@@ -50,7 +54,7 @@
 /* Begin PBXFileReference section */
 		01D949FE20E73058DCF34A2B /* Pods-Hackpuc-New.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.release.xcconfig"; sourceTree = "<group>"; };
 		15E678EC0EFE471DC83D19A1 /* Pods-Hackpuc-New.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.debug.xcconfig"; sourceTree = "<group>"; };
-		5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackpuc-New-Bridging-Header.h"; sourceTree = "<group>"; };
+		5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Hackpuc-New-Bridging-Header.h"; path = "Hackpuc-New/Hackpuc-New-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOKPresenter.swift; sourceTree = "<group>"; };
 		5151EDE41C1C36A6004CBF38 /* ReadyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		5151EDE71C1C5380004CBF38 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -71,6 +75,10 @@
 		51553CF21C1BF9D100424CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51553D031C1BFB4300424CB8 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
 		51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		94541FD21C1C9C340054D142 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		94541FD41C1C9C9A0054D142 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		94541FD81C1C9D6C0054D142 /* RealmContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmContacts.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
@@ -85,7 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94541FD71C1C9CA60054D142 /* SystemConfiguration.framework in Frameworks */,
+				94541FD61C1C9CA10054D142 /* CoreBluetooth.framework in Frameworks */,
 				FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */,
+				94541FD51C1C9C9A0054D142 /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +161,12 @@
 		51553CCF1C1BF9D100424CB8 /* Hackpuc-New */ = {
 			isa = PBXGroup;
 			children = (
-				5151EDE61C1C5374004CBF38 /* Images */,
+				94541FD41C1C9C9A0054D142 /* MyoKit.framework */,
 				51553CD01C1BF9D100424CB8 /* AppDelegate.swift */,
 				5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */,
+				94541FC71C1C97D90054D142 /* DAO */,
+				94541FC41C1C97100054D142 /* Protocol */,
+				5151EDE61C1C5374004CBF38 /* Images */,
 				51553D021C1BFA0700424CB8 /* Router */,
 				51553D001C1BF9EB00424CB8 /* Entity */,
 				51553CFF1C1BF9E600424CB8 /* Presenter */,
@@ -210,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				F27F500E1C1C52EF0075636A /* FP.swift */,
-				5151EDEE1C1C5692004CBF38 /* LogInViewProtocol.swift */,
 				F27F50101C1C54450075636A /* FPColor.swift */,
+				94541FD81C1C9D6C0054D142 /* RealmContacts.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -230,9 +244,26 @@
 			name = Router;
 			sourceTree = "<group>";
 		};
+		94541FC41C1C97100054D142 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5151EDEE1C1C5692004CBF38 /* LogInViewProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		94541FC71C1C97D90054D142 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		B12A76E5F913F32B5F7E1BC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94541FD21C1C9C340054D142 /* SystemConfiguration.framework */,
+				94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */,
 				973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */,
 			);
 			name = Frameworks;
@@ -428,6 +459,7 @@
 				5151EDED1C1C549F004CBF38 /* LogInPresenter.swift in Sources */,
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,
 				5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */,
+				94541FD91C1C9D6C0054D142 /* RealmContacts.swift in Sources */,
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
@@ -569,6 +601,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Hackpuc-New",
+				);
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -586,6 +622,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Hackpuc-New",
+				);
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
