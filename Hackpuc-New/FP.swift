@@ -50,13 +50,15 @@ class FP: NSObject {
     
 
     
-    //Fontes
+    //Font's
     
     class func fontName() -> String {
         
         return "GeosansLight-Regular"
         
     }
+    
+    //Font's Sizes
     
     class func normalFS() -> CGFloat {
             
@@ -68,6 +70,12 @@ class FP: NSObject {
     class func smallFS() -> CGFloat {
         
         return CGFloat(Int(29 * wP()))
+        
+    }
+    
+    class func titFS() -> CGFloat {
+        
+        return CGFloat(Int(34 * wP()))
         
     }
         

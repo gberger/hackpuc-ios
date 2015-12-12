@@ -20,7 +20,7 @@ class FPColor: NSObject {
     
     class func bColor() -> UIColor {
         
-        return UIColor(red: 122/255.0, green: 211/255.0, blue: 251/255.0, alpha: 1)
+        return UIColor(red: 52/255.0, green: 181/255.0, blue: 240/255.0, alpha: 1)
         
     }
     

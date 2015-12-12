@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = view
         self.window?.makeKeyAndVisible()
         
-//        TLMHub.sharedHub()
-//        TLMHub.sharedHub().shouldNotifyInBackground = true
-//        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
+        TLMHub.sharedHub()
+        TLMHub.sharedHub().shouldNotifyInBackground = true
+        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
         
         return true
     }

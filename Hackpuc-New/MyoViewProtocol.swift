@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol MyoViewProtocol {
+    
+    func connectMyo()
+}
