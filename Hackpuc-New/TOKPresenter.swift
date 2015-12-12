@@ -34,22 +34,11 @@ class TOKPresenter: UIViewController, OTPublisherDelegate, OTSessionDelegate {
     
     //STREAM
     
-    func publisher(publisher: OTPublisher!, didChangeCameraPosition position: AVCaptureDevicePosition) {
-        
-    }
-    
     func publisher(publisher: OTPublisherKit!, didFailWithError error: OTError!) {
-    
-    }
-    
-    func publisher(publisher: OTPublisherKit!, streamCreated stream: OTStream!) {
         
+        print(error)
     }
-    
-    func publisher(publisher: OTPublisherKit!, streamDestroyed stream: OTStream!) {
-        
-    }
-    
+
     //SESSION
     
     func sessionDidConnect(session: OTSession!) {
@@ -60,18 +49,22 @@ class TOKPresenter: UIViewController, OTPublisherDelegate, OTSessionDelegate {
     
     func sessionDidDisconnect(session: OTSession!) {
         
+        print("AudioStream Disconnected")
     }
     
     func session(session: OTSession!, didFailWithError error: OTError!) {
-        
+     
+        print(error)
     }
     
     func session(session: OTSession!, streamCreated stream: OTStream!) {
         
+        print("Stream Created")
     }
     
     func session(session: OTSession!, streamDestroyed stream: OTStream!) {
         
+        print("Stream Destroyed")
     }
     
     //MEMORY WARNING
