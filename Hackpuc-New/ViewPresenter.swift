@@ -94,7 +94,7 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             
             Alamofire.request(.POST, APIURL + "/alerts", parameters: data, encoding: .JSON).responseJSON { response in
                 
-                let JSON = response.result.value
+                let JSON = response.result.value as? [String: AnyObject]
                 
                 if JSON == nil {
                   
@@ -114,7 +114,7 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
                 
                 Alamofire.request(.POST, self.APIURL + "/alerts/\(self.userId)/fire", parameters: data, encoding: .JSON).responseJSON { response in
                     
-                    let JSON2 = response.result.value
+                    let JSON2 = response.result.value as? [String: AnyObject]
                     
                     if JSON2 == nil {
                         
