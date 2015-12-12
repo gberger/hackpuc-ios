@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class REALMContact {
+class REALMContact: Object {
     
     dynamic var name = ""
     dynamic var phone = ""
