@@ -19,6 +19,7 @@
 		F27F500D1C1C500C0075636A /* First_Time_Screen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500C1C1C500C0075636A /* First_Time_Screen1.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
+		F27F50131C1C57C80075636A /* FPMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* FPMainScreen.swift */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -64,6 +65,7 @@
 		F27F500C1C1C500C0075636A /* First_Time_Screen1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = First_Time_Screen1.swift; sourceTree = "<group>"; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
+		F27F50121C1C57C80075636A /* FPMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMainScreen.swift; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 				F27F500C1C1C500C0075636A /* First_Time_Screen1.swift */,
+				F27F50121C1C57C80075636A /* FPMainScreen.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
+				F27F50131C1C57C80075636A /* FPMainScreen.swift in Sources */,
 				F27F500D1C1C500C0075636A /* First_Time_Screen1.swift in Sources */,
 				F27F500F1C1C52EF0075636A /* FP.swift in Sources */,
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,
