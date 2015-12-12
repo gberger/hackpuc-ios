@@ -12,6 +12,7 @@ class MyoConnectView: UIView {
     
     var delegate: MyoViewProtocol?
     var cInfo: UILabel?
+    var labelInfo: UILabel?
     var myo: UIImageView?
     
     var tapGesture = UITapGestureRecognizer()
@@ -34,7 +35,7 @@ class MyoConnectView: UIView {
         let bgView = UIImageView(image: UIImage(named: "Background.png"))
         bgView.frame = CGRectMake(0, 0, FP.mW(), FP.mH())
         
-        let lPar1Tx:String = "Conecte seu dispositivo e você estará pronto."
+        let labelInfoTx:String = "Toque na imagem para conectar o seu dispositivo."
         
         // Units
         let yOffset:        CGFloat = 50
@@ -73,12 +74,12 @@ class MyoConnectView: UIView {
         //Declarações
         
         //Label Parte 1
-        let lPar1 = UILabel(frame: CGRectMake(lP1X,lP1Y,lP1W,lP1H))
-        lPar1.text = lPar1Tx
-        lPar1.font = UIFont(name: "GeosansLight", size: FP.normalFS())
-        lPar1.textColor = FPColor.wColor()
-        lPar1.textAlignment = NSTextAlignment.Center
-        lPar1.numberOfLines = 99
+        labelInfo = UILabel(frame: CGRectMake(lP1X,lP1Y,lP1W,lP1H))
+        labelInfo?.text = labelInfoTx
+        labelInfo?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
+        labelInfo?.textColor = FPColor.wColor()
+        labelInfo?.textAlignment = NSTextAlignment.Center
+        labelInfo?.numberOfLines = 99
         
         //Continue Button
         cInfo = UILabel(frame: CGRectMake(cInfoX, cInfoY, cInfoW, cInfoH))
@@ -100,7 +101,7 @@ class MyoConnectView: UIView {
         
         //Acrescentar views
         self.addSubview(bgView)
-        self.addSubview(lPar1)
+        self.addSubview(labelInfo!)
         self.addSubview(pena)
         self.addSubview(cInfo!)
         self.addSubview(myo!)

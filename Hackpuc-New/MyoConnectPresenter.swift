@@ -10,9 +10,12 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewProtocol {
+class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewProtocol, OTPublisherDelegate, OTSessionDelegate {
     
     var locationManager: CLLocationManager?
+    
+    var session: OTSession?
+    var publisher: OTPublisher?
     
     var myo: [TLMMyo] = []
     
@@ -81,6 +84,47 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewP
             locationManager?.pausesLocationUpdatesAutomatically = false
             locationManager?.allowsBackgroundLocationUpdates = true
         }
+    }
+    
+    /******************************/
+    //MARK: OPENTOK MANAGER
+    /******************************/
+     
+     //STREAM
+    
+    func publisher(publisher: OTPublisherKit!, didFailWithError error: OTError!) {
+        
+        print("*******ERRO PUBLISH DID FAIL WITH ERROR")
+        print(error)
+    }
+    
+    //SESSION
+    
+    func sessionDidConnect(session: OTSession!) {
+        
+        publisher = OTPublisher(delegate: self, name: "AudioStream", audioTrack: true, videoTrack: false)
+        session.publish(publisher!, error: nil)
+    }
+    
+    func sessionDidDisconnect(session: OTSession!) {
+        
+        print("AudioStream Disconnected")
+    }
+    
+    func session(session: OTSession!, didFailWithError error: OTError!) {
+        
+        print("*******ERRO SESSION DID FAIL WITH ERROR")
+        print(error)
+    }
+    
+    func session(session: OTSession!, streamCreated stream: OTStream!) {
+        
+        print("Stream Created")
+    }
+    
+    func session(session: OTSession!, streamDestroyed stream: OTStream!) {
+        
+        print("Stream Destroyed")
     }
     
     /******************************/
@@ -154,6 +198,33 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewP
                         return
                     }
                     
+                    let openTok = JSON2!["openTok"] as? [String: AnyObject]
+                    
+                    if openTok == nil {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    let sessionId = openTok!["sessionId"] as? String
+                    
+                    if sessionId == nil {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    let token = openTok!["token"] as? String
+                    
+                    if token == nil {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    self.session = OTSession(apiKey: "45435402", sessionId: sessionId, delegate: self)
+                    self.session?.connectWithToken(token, error: nil)
+                    
                     self.userFiringId = firingId!
                     self.waitingResponse = false
                     self.sendingInfo = true
@@ -196,8 +267,9 @@ class MyoConnectPresenter: UIViewController, CLLocationManagerDelegate, MyoViewP
     func connectionEvent(notification: NSNotification){
         
         myo = TLMHub.sharedHub().myoDevices() as! [TLMMyo]
-        self.myView.cInfo?.backgroundColor = FPColor.gColor()
+        self.myView.cInfo?.textColor = FPColor.gColor()
         self.myView.cInfo?.text = "Conectado"
+        self.myView.labelInfo?.text = "Deixe o aplicativo nesta tela. Você pode minimizar o app e utilizar seu celular normalmente."
         self.myView.myo?.image = UIImage(named: "MyoOn.png")
     }
     

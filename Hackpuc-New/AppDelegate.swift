@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        print(Realm.Configuration.defaultConfiguration.path!)
-        
-        let view = ContactsPresenter()
+        let view = SetupPresenter()
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = view
         self.window?.makeKeyAndVisible()
