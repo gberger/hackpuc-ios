@@ -216,6 +216,7 @@
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 				F27F50121C1C57C80075636A /* LogInView.swift */,
 				51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */,
+				F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

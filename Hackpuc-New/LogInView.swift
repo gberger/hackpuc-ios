@@ -79,13 +79,14 @@ class LogInView: UIView , UITextFieldDelegate {
         lPar1?.text = lPar1Tx
         lPar1?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         lPar1?.textColor = FPColor.wColor()
-        lPar1?.textAlignment = .Center
+        lPar1?.textAlignment = NSTextAlignment.Center
+        lPar1?.highlighted = true
         lPar1?.numberOfLines = 99
         
         //TextField Name
         //FieldName
         tFName = UITextField(frame: CGRectMake(fNameX, fNameY, fNameW, fNameH))
-        tFName.placeholder = NSLocalizedString("         Seu nome", comment: "Nome")
+        tFName.placeholder = NSLocalizedString("Seu nome", comment: "Nome")
         //tFName.center = CGPointMake(fNameW, fNameH)
         tFName.font = UIFont.systemFontOfSize(29)
         tFName.borderStyle = UITextBorderStyle.RoundedRect
@@ -103,7 +104,7 @@ class LogInView: UIView , UITextFieldDelegate {
         //Continue Button
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
         bCon.backgroundColor = FPColor.bColor()
-        bCon.setTitle("Continuar", forState: .Normal)
+        bCon.setTitle("Continuar", forState: UIControlState.Normal)
         
         //Pena
         let pena = UIImageView(image: UIImage(named: "Pena.png"))

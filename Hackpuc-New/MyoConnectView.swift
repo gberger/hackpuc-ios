@@ -72,7 +72,7 @@ class MyoConnectView: UIView {
         lPar1.text = lPar1Tx
         lPar1.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         lPar1.textColor = FPColor.wColor()
-        lPar1.textAlignment = .Center
+        lPar1.textAlignment = NSTextAlignment.Center
         lPar1.numberOfLines = 99
         
         //Continue Button
@@ -80,7 +80,7 @@ class MyoConnectView: UIView {
         cInfo?.text = "Não Conectado"
         cInfo?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         cInfo?.textColor = FPColor.rColor()
-        cInfo?.textAlignment = .Center
+        cInfo?.textAlignment = NSTextAlignment.Center
         cInfo?.numberOfLines = 99
         
         //Pena
