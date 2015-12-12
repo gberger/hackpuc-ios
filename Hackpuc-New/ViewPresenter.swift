@@ -73,7 +73,6 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             
         }
         
-        print(data)
         Alamofire.request(.POST, "http://2bdf1396.ngrok.com", parameters: data, encoding: .JSON)
     }
     

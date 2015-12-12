@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		01D949FE20E73058DCF34A2B /* Pods-Hackpuc-New.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.release.xcconfig"; sourceTree = "<group>"; };
 		15E678EC0EFE471DC83D19A1 /* Pods-Hackpuc-New.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackpuc-New.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackpuc-New/Pods-Hackpuc-New.debug.xcconfig"; sourceTree = "<group>"; };
+		5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackpuc-New-Bridging-Header.h"; sourceTree = "<group>"; };
 		51553CCD1C1BF9D100424CB8 /* Hackpuc-New.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackpuc-New.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51553CD01C1BF9D100424CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				51553CD01C1BF9D100424CB8 /* AppDelegate.swift */,
+				5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */,
 				51553D021C1BFA0700424CB8 /* Router */,
 				51553D001C1BF9EB00424CB8 /* Entity */,
 				51553CFF1C1BF9E600424CB8 /* Presenter */,
@@ -505,10 +507,13 @@
 			baseConfigurationReference = 15E678EC0EFE471DC83D19A1 /* Pods-Hackpuc-New.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "H4CKPUC.Hackpuc-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackpuc-New/Hackpuc-New-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -517,10 +522,12 @@
 			baseConfigurationReference = 01D949FE20E73058DCF34A2B /* Pods-Hackpuc-New.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "H4CKPUC.Hackpuc-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackpuc-New/Hackpuc-New-Bridging-Header.h";
 			};
 			name = Release;
 		};
