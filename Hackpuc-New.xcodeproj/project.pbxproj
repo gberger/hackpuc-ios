@@ -205,6 +205,7 @@
 			children = (
 				F27F500E1C1C52EF0075636A /* FP.swift */,
 				5151EDEE1C1C5692004CBF38 /* LogInViewProtocol.swift */,
+				F27F50101C1C54450075636A /* FPColor.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";

@@ -27,7 +27,7 @@ class LogInView: UIView {
         let bgView = UIImageView(image: UIImage(named: "Background.png"))
         bgView.frame = CGRectMake(0, 0, FP.mW(), FP.mH())
         
-//Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos)
+//Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos, abreviados)
         
         //Botao de Continuar
         let bConW: CGFloat = FP.wP() * 281
