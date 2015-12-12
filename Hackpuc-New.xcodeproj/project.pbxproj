@@ -10,7 +10,6 @@
 		5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */; };
 		5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE41C1C36A6004CBF38 /* ReadyView.swift */; };
 		5151EDE81C1C5380004CBF38 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5151EDE71C1C5380004CBF38 /* Background.png */; };
-		5151EDEB1C1C5399004CBF38 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDEA1C1C5399004CBF38 /* LogInView.swift */; };
 		5151EDED1C1C549F004CBF38 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */; };
 		5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDEE1C1C5692004CBF38 /* LogInViewProtocol.swift */; };
 		5151EDF31C1C57E0004CBF38 /* Pena.png in Resources */ = {isa = PBXBuildFile; fileRef = 5151EDF21C1C57E0004CBF38 /* Pena.png */; };
@@ -23,7 +22,7 @@
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
-		F27F50131C1C57C80075636A /* FPMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* FPMainScreen.swift */; };
+		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -53,7 +52,6 @@
 		5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOKPresenter.swift; sourceTree = "<group>"; };
 		5151EDE41C1C36A6004CBF38 /* ReadyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
 		5151EDE71C1C5380004CBF38 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
-		5151EDEA1C1C5399004CBF38 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		5151EDEE1C1C5692004CBF38 /* LogInViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewProtocol.swift; sourceTree = "<group>"; };
 		5151EDF21C1C57E0004CBF38 /* Pena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pena.png; sourceTree = "<group>"; };
@@ -73,7 +71,7 @@
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
-		F27F50121C1C57C80075636A /* FPMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMainScreen.swift; sourceTree = "<group>"; };
+		F27F50121C1C57C80075636A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,8 +183,7 @@
 			children = (
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
-				F27F500C1C1C500C0075636A /* First_Time_Screen1.swift */,
-				F27F50121C1C57C80075636A /* FPMainScreen.swift */,
+				F27F50121C1C57C80075636A /* LogInView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -419,8 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
-				F27F50131C1C57C80075636A /* FPMainScreen.swift in Sources */,
-				F27F500D1C1C500C0075636A /* First_Time_Screen1.swift in Sources */,
+				F27F50131C1C57C80075636A /* LogInView.swift in Sources */,
 				F27F500F1C1C52EF0075636A /* FP.swift in Sources */,
 				5151EDED1C1C549F004CBF38 /* LogInPresenter.swift in Sources */,
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,
@@ -429,7 +425,6 @@
 				5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
-				5151EDEB1C1C5399004CBF38 /* LogInView.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
 				F27F50111C1C54450075636A /* FPColor.swift in Sources */,
 			);

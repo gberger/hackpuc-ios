@@ -22,12 +22,12 @@ class LogInView: UIView {
     
     func setup() {
         
-//Background
+        //Background
         
         let bgView = UIImageView(image: UIImage(named: "Background.png"))
         bgView.frame = CGRectMake(0, 0, FP.mW(), FP.mH())
         
-//Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos, abreviados)
+        //Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos, abreviados)
         
         //Botao de Continuar
         let bConW: CGFloat = FP.wP() * 281
@@ -41,7 +41,7 @@ class LogInView: UIView {
         let penaX: CGFloat = (FP.mW() - penaW)/2
         let penaY: CGFloat = 60
         
-//Aqui se criam os componentes
+        //Aqui se criam os componentes
         
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
         bCon.backgroundColor = UIColor.blueColor()
