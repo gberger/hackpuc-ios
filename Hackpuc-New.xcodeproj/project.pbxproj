@@ -22,6 +22,7 @@
 		51553CF11C1BF9D100424CB8 /* Hackpuc_NewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */; };
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
+		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -70,6 +71,7 @@
 		51553D031C1BFB4300424CB8 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
+		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -423,6 +425,7 @@
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
 				5151EDEB1C1C5399004CBF38 /* LogInView.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
+				F27F50111C1C54450075636A /* FPColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
