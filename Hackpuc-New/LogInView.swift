@@ -42,7 +42,7 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos, abreviados)
         
-        let lPar1Tx:String = "Olá , antes de fazer a conecao com seu dispositivo vamos configurar os alertas.."
+        let lPar1Tx:String = "Olá , antes de fazer a conexão com seu dispositivo vamos configurar os alertas..."
         
         
         //Label Parte 1
@@ -79,7 +79,7 @@ class LogInView: UIView , UITextFieldDelegate {
         lPar1?.text = lPar1Tx
         lPar1?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         lPar1?.textColor = FPColor.wColor()
-        lPar1?.textAlignment = .Natural
+        lPar1?.textAlignment = .Center
         lPar1?.numberOfLines = 99
         
         //TextField Name
@@ -98,17 +98,14 @@ class LogInView: UIView , UITextFieldDelegate {
         tFName?.hidden = false
         tFName?.alpha = 0
         
-        
         //Continue Button
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
         bCon.backgroundColor = FPColor.bColor()
         bCon.setTitle("Continuar", forState: .Normal)
         
-        
         //Pena
         let pena = UIImageView(image: UIImage(named: "Pena.png"))
         pena.frame = CGRectMake(penaX, penaY, penaW, penaH)
-        //pena.layer.cornerRadius = metadetamanho
         
         
         //Aqui se adicionam os componentes
