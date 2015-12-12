@@ -21,10 +21,15 @@
 		51553CF11C1BF9D100424CB8 /* Hackpuc_NewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */; };
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
 		51FF04B41C1C7AD000C4A946 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */; };
+		51FF04B61C1CA72000C4A946 /* MyoConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */; };
+		51FF04B81C1CA75A00C4A946 /* MyoConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF04B71C1CA75A00C4A946 /* MyoConnectPresenter.swift */; };
+		51FF04BB1C1CAFD800C4A946 /* MyoOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 51FF04B91C1CAFD800C4A946 /* MyoOff.png */; };
+		51FF04BC1C1CAFD800C4A946 /* MyoOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 51FF04BA1C1CAFD800C4A946 /* MyoOn.png */; };
 		94541FD51C1C9C9A0054D142 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD41C1C9C9A0054D142 /* MyoKit.framework */; };
 		94541FD61C1C9CA10054D142 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */; };
 		94541FD71C1C9CA60054D142 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD21C1C9C340054D142 /* SystemConfiguration.framework */; };
 		94541FDB1C1C9F520054D142 /* REALMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94541FDA1C1C9F520054D142 /* REALMContact.swift */; };
+		94541FDD1C1CA4B80054D142 /* ContactsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
@@ -76,10 +81,15 @@
 		51553CF21C1BF9D100424CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51553D031C1BFB4300424CB8 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
 		51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoConnectView.swift; sourceTree = "<group>"; };
+		51FF04B71C1CA75A00C4A946 /* MyoConnectPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoConnectPresenter.swift; sourceTree = "<group>"; };
+		51FF04B91C1CAFD800C4A946 /* MyoOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyoOff.png; sourceTree = "<group>"; };
+		51FF04BA1C1CAFD800C4A946 /* MyoOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyoOn.png; sourceTree = "<group>"; };
 		94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		94541FD21C1C9C340054D142 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		94541FD41C1C9C9A0054D142 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 		94541FDA1C1C9F520054D142 /* REALMContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REALMContact.swift; sourceTree = "<group>"; };
+		94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDAO.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
@@ -131,6 +141,8 @@
 		5151EDE61C1C5374004CBF38 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				51FF04B91C1CAFD800C4A946 /* MyoOff.png */,
+				51FF04BA1C1CAFD800C4A946 /* MyoOn.png */,
 				5151EDF21C1C57E0004CBF38 /* Pena.png */,
 				5151EDE71C1C5380004CBF38 /* Background.png */,
 			);
@@ -205,6 +217,7 @@
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 				F27F50121C1C57C80075636A /* LogInView.swift */,
+				51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */,
 				F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */,
 			);
 			name = View;
@@ -219,6 +232,7 @@
 				F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */,
 				5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */,
 				51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */,
+				51FF04B71C1CA75A00C4A946 /* MyoConnectPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -258,6 +272,7 @@
 		94541FC71C1C97D90054D142 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -380,8 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5151EDE81C1C5380004CBF38 /* Background.png in Resources */,
+				51FF04BB1C1CAFD800C4A946 /* MyoOff.png in Resources */,
 				51553CDB1C1BF9D100424CB8 /* LaunchScreen.storyboard in Resources */,
 				F27F50151C1C72B20075636A /* GeosansLight.ttf in Resources */,
+				51FF04BC1C1CAFD800C4A946 /* MyoOn.png in Resources */,
 				51553CD81C1BF9D100424CB8 /* Assets.xcassets in Resources */,
 				5151EDF31C1C57E0004CBF38 /* Pena.png in Resources */,
 			);
@@ -457,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94541FDB1C1C9F520054D142 /* REALMContact.swift in Sources */,
+				51FF04B61C1CA72000C4A946 /* MyoConnectView.swift in Sources */,
 				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
 				F27F50131C1C57C80075636A /* LogInView.swift in Sources */,
 				F29F7D6D1C1CA50A00767DE1 /* ContactsView.swift in Sources */,
@@ -466,7 +484,9 @@
 				5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */,
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */,
+				94541FDD1C1CA4B80054D142 /* ContactsDAO.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
+				51FF04B81C1CA75A00C4A946 /* MyoConnectPresenter.swift in Sources */,
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
 				51FF04B41C1C7AD000C4A946 /* ContactsPresenter.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
