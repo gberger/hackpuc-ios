@@ -56,6 +56,7 @@ class MYOPresenter: UIViewController {
         switch pose!.type {
             
         case TLMPoseType.DoubleTap :
+            print("double")
             
 //            self.poseLabel.text = "Double Tap"
             //            if pose?.myo!.isLocked == true{
@@ -69,21 +70,23 @@ class MYOPresenter: UIViewController {
             break;
             
         case TLMPoseType.FingersSpread:
-            
+            print("fingers")
             break;
             
         case TLMPoseType.Fist:
-            
+            print("fist")
             if !begin { self.emergency() ; begin = true }
             if begin && waiting { self.userAnswered() ; waiting = false }
             break;
             
             
         case TLMPoseType.WaveIn:
+            print("wavvein")
             
             break;
             
         case TLMPoseType.WaveOut:
+            print("waveout")
             
             break;
             
@@ -133,7 +136,7 @@ class MYOPresenter: UIViewController {
         
         print("I'm fine")
         self.myo[0].vibrateWithLength(TLMVibrationLength.Short)
-        delay(45, closure: {
+        delay(15, closure: {
             self.feedback()
         })
     }
