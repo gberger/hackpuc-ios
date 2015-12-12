@@ -13,7 +13,7 @@ class ContactsDAO {
     
     var realm = try! Realm()
     
-    func saveContacts(contacts: REALMContact) {
+    func saveContacts(contacts: FPContact) {
         
         try! realm.write({
             

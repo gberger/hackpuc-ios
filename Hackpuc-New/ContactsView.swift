@@ -12,6 +12,7 @@ import UIKit
 class ContactsView: UIView {
     
     var cTable: UITableView = UITableView()
+    var delegate: ContactsProtocol?
     
     override init(frame: CGRect) {
         
@@ -92,9 +93,12 @@ class ContactsView: UIView {
         
         //Creation tableView
         cTable.frame = CGRectMake(cTX, cTY, cTW, cTH)
-//      cTable.delegate = self
-//      cTable.dataSource = self
         cTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        let button = UIButton(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
+        button.setTitle("Add", forState: .Normal)
+        button.addTarget(self, action: Selector("newContact"), forControlEvents: .TouchUpInside)
+        button.backgroundColor = .redColor()
         
         
         //adding
@@ -103,7 +107,11 @@ class ContactsView: UIView {
         self.addSubview(cTable)
         self.addSubview(bCon)
         self.addSubview(bb)
+        self.addSubview(button)
+    }
+    
+    func newContact() {
         
-        
+        delegate?.addContact()
     }
 }

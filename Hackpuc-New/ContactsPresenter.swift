@@ -8,8 +8,15 @@
 
 import UIKit
 import Contacts
+import ContactsUI
+import RealmSwift
 
-class ContactsPresenter: UIViewController {
+class ContactsPresenter: UIViewController, UITableViewDataSource, UITableViewDelegate, CNContactPickerDelegate, ContactsProtocol {
+    
+    var contacts: [String] = []
+    var phoneNumbers: [String] = []
+    
+    var realm = try! Realm()
     
     var myView: ContactsView {
         
@@ -18,56 +25,103 @@ class ContactsPresenter: UIViewController {
         }
     }
     
+    /******************************/
+    //MARK: Application Methods
+    /******************************/
+    
     override func viewDidLoad() {
         
         self.view = ContactsView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         
+        self.myView.cTable.delegate = self
+        self.myView.cTable.dataSource = self
+        
+        self.myView.delegate = self
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib. Teste commit
-        
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
-            
-            let contacts = self.findContacts()
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
-                print(contacts[0].givenName)
-                
-                if let numero = contacts[0].phoneNumbers[0].value as? CNPhoneNumber {
-                    print(numero.stringValue)
-                }
-            })
-        })
-        
-    }
-    
-    func findContacts() -> [CNContact] {
-        
-        let store = CNContactStore()
-        
-        let keysToFetch = [CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName),
-            CNContactImageDataKey,
-            CNContactPhoneNumbersKey]
-        
-        let fetchRequest = CNContactFetchRequest(keysToFetch: keysToFetch)
-        
-        var contacts = [CNContact]()
-        
-        do {
-            try store.enumerateContactsWithFetchRequest(fetchRequest, usingBlock: { (let contact, let stop) -> Void in
-                contacts.append(contact)
-            })
-        }
-        catch let error as NSError {
-            print(error.localizedDescription)
-        } 
-        
-        return contacts
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /******************************/
+    //MARK: Contacts Methods
+    /******************************/
+    
+    func contactPicker(picker: CNContactPickerViewController, didSelectContactProperty contactProperty: CNContactProperty) {
+        
+        let contact = contactProperty.contact.givenName
+        let phoneNumber = (contactProperty.value as! CNPhoneNumber).stringValue
+        
+        let realmContact = FPContact()
+        realmContact.name = contact
+        realmContact.phone = phoneNumber
+        self.saveContacts(realmContact)
+        
+        contacts.append(contact)
+        phoneNumbers.append(phoneNumber)
+        
+        self.myView.cTable.reloadData()
+        self.myView.cTable.layoutIfNeeded()
+    }
+    
+    /******************************/
+    //MARK: Protocol Methods
+    /******************************/
+     
+    func addContact() {
+        
+        let contactPicker = CNContactPickerViewController()
+        contactPicker.delegate = self;
+        contactPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
+        
+        self.presentViewController(contactPicker, animated: true, completion: nil)
+    }
+    
+    /******************************/
+    //MARK: TableView Methods
+    /******************************/
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.contacts.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 40.0
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = self.myView.cTable.dequeueReusableCellWithIdentifier("cell")!
+        cell.textLabel?.text = contacts[indexPath.row] + " / "  + phoneNumbers[indexPath.row]
+        
+        return cell
+    }
+    
+    /******************************/
+    //MARK: Realm Methods
+    /******************************/
+    
+    func saveContacts(contacts: FPContact) {
+        
+        try! realm.write({
+            
+            self.realm.add(contacts)
+        })
     }
 }
 
