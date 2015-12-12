@@ -36,6 +36,8 @@
 		F27F50151C1C72B20075636A /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F27F50141C1C72B20075636A /* GeosansLight.ttf */; };
 		F29F7D6D1C1CA50A00767DE1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */; };
 		F29F7D6F1C1CC15900767DE1 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = F29F7D6E1C1CC15900767DE1 /* back.png */; };
+		F29F7D711C1CD2B900767DE1 /* MsgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F7D701C1CD2B900767DE1 /* MsgView.swift */; };
+		F29F7D731C1CD2EC00767DE1 /* MsgPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F7D721C1CD2EC00767DE1 /* MsgPresenter.swift */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -98,6 +100,8 @@
 		F27F50141C1C72B20075636A /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
 		F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		F29F7D6E1C1CC15900767DE1 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		F29F7D701C1CD2B900767DE1 /* MsgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgView.swift; sourceTree = "<group>"; };
+		F29F7D721C1CD2EC00767DE1 /* MsgPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgPresenter.swift; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +228,7 @@
 				F27F50121C1C57C80075636A /* LogInView.swift */,
 				51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */,
 				F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */,
+				F29F7D701C1CD2B900767DE1 /* MsgView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */,
 				51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */,
 				51FF04B71C1CA75A00C4A946 /* MyoConnectPresenter.swift */,
+				F29F7D721C1CD2EC00767DE1 /* MsgPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -480,6 +486,8 @@
 				94541FDB1C1C9F520054D142 /* REALMContact.swift in Sources */,
 				51FF04B61C1CA72000C4A946 /* MyoConnectView.swift in Sources */,
 				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
+				F29F7D711C1CD2B900767DE1 /* MsgView.swift in Sources */,
+				F29F7D731C1CD2EC00767DE1 /* MsgPresenter.swift in Sources */,
 				F27F50131C1C57C80075636A /* LogInView.swift in Sources */,
 				F29F7D6D1C1CA50A00767DE1 /* ContactsView.swift in Sources */,
 				F27F500F1C1C52EF0075636A /* FP.swift in Sources */,
