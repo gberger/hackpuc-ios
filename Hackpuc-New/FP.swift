@@ -39,5 +39,36 @@ class FP: NSObject {
         
         return 0.0//CGFloat(Int(2 * wProp()))
         
-}
+        
+    }
+    
+    class func round(number: CGFloat) -> CGFloat {
+        
+        return CGFloat(Int(number))
+        
+    }
+    
+
+    
+    //Fontes
+    
+    class func fontName() -> String {
+        
+        return "GeosansLight-Regular"
+        
+    }
+    
+    class func normalFS() -> CGFloat {
+            
+            return CGFloat(Int(26 * wP()))
+            
+        }
+    
+    
+    class func smallFS() -> CGFloat {
+        
+        return CGFloat(Int(29 * wP()))
+        
+    }
+        
 }
