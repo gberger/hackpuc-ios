@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewPresenter: UIViewController {
+class ViewPresenter: UIViewController, CLLocationManagerDelegate {
+    
+    var locationScanInterval = 4.0
+    var locationManager: CLLocationManager?
+    var numero = 0
     
     var myView: UIView {
         get {
@@ -18,10 +23,56 @@ class ViewPresenter: UIViewController {
 
     override func viewDidLoad() {
         
-        self.view = UIView()
-        
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        let authorized = CLLocationManager.authorizationStatus()
+        
+        if(authorized == CLAuthorizationStatus.Restricted || authorized == CLAuthorizationStatus.Denied) {
+            
+            //Denied to use the position
+            
+        } else {
+            
+            locationManager = CLLocationManager()
+            locationManager?.requestAlwaysAuthorization()
+            CLLocationManager.locationServicesEnabled()
+            locationManager?.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.distanceFilter = kCLDistanceFilterNone
+            locationManager?.startUpdatingLocation()
+        }
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+        if(UIApplication.sharedApplication().applicationState == UIApplicationState.Active) {
+            
+            print("Teste \(numero)")
+            numero++
+            print(locations)
+            
+        } else {
+            
+            print("Teste Background \(numero)")
+            numero++
+            print(locations)
+            
+        }
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        
+        print(error)
     }
 
     override func didReceiveMemoryWarning() {
