@@ -16,8 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.window?.rootViewController = ViewPresenter()
+        self.window?.rootViewController = MYOPresenter()
         self.window?.makeKeyAndVisible()
+        
+        TLMHub.sharedHub()
+        TLMHub.sharedHub().shouldNotifyInBackground = true
+        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
         
         return true
     }

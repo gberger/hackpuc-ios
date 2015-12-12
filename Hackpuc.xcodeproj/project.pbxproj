@@ -14,6 +14,10 @@
 		51B37C961C1BB38700E13044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51B37C941C1BB38700E13044 /* LaunchScreen.storyboard */; };
 		51B37CA11C1BB38800E13044 /* HackpucTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B37CA01C1BB38800E13044 /* HackpucTests.swift */; };
 		51B37CAC1C1BB38800E13044 /* HackpucUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B37CAB1C1BB38800E13044 /* HackpucUITests.swift */; };
+		94CC80961C1BC9B200252BF5 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC80951C1BC9B200252BF5 /* MYOPresenter.swift */; };
+		94CC80981C1BCA5100252BF5 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC80971C1BCA5100252BF5 /* MyoKit.framework */; };
+		94CC80A01C1BCB8000252BF5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC809F1C1BCB8000252BF5 /* CoreBluetooth.framework */; };
+		94CC80A21C1BCB8500252BF5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC80A11C1BCB8500252BF5 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,11 @@
 		51B37CA71C1BB38800E13044 /* HackpucUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackpucUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B37CAB1C1BB38800E13044 /* HackpucUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackpucUITests.swift; sourceTree = "<group>"; };
 		51B37CAD1C1BB38800E13044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CC80951C1BC9B200252BF5 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
+		94CC80971C1BCA5100252BF5 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		94CC809E1C1BCAE200252BF5 /* Hackpuc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Hackpuc-Bridging-Header.h"; path = "Hackpuc/Hackpuc-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		94CC809F1C1BCB8000252BF5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		94CC80A11C1BCB8500252BF5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +63,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CC80A21C1BCB8500252BF5 /* SystemConfiguration.framework in Frameworks */,
+				94CC80A01C1BCB8000252BF5 /* CoreBluetooth.framework in Frameworks */,
+				94CC80981C1BCA5100252BF5 /* MyoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,9 @@
 		51B37C7F1C1BB38700E13044 = {
 			isa = PBXGroup;
 			children = (
+				94CC80A11C1BCB8500252BF5 /* SystemConfiguration.framework */,
+				94CC809F1C1BCB8000252BF5 /* CoreBluetooth.framework */,
+				94CC80971C1BCA5100252BF5 /* MyoKit.framework */,
 				51B37C8A1C1BB38700E13044 /* Hackpuc */,
 				51B37C9F1C1BB38800E13044 /* HackpucTests */,
 				51B37CAA1C1BB38800E13044 /* HackpucUITests */,
@@ -97,6 +112,7 @@
 		51B37C8A1C1BB38700E13044 /* Hackpuc */ = {
 			isa = PBXGroup;
 			children = (
+				94CC809E1C1BCAE200252BF5 /* Hackpuc-Bridging-Header.h */,
 				51B37C8B1C1BB38700E13044 /* AppDelegate.swift */,
 				51FE08C31C1BB3EB00DC986E /* Router */,
 				51FE08C21C1BB3E700DC986E /* Entity */,
@@ -147,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				51B37C8D1C1BB38700E13044 /* ViewPresenter.swift */,
+				94CC80951C1BC9B200252BF5 /* MYOPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -296,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51B37C8E1C1BB38700E13044 /* ViewPresenter.swift in Sources */,
+				94CC80961C1BC9B200252BF5 /* MYOPresenter.swift in Sources */,
 				51B37C8C1C1BB38700E13044 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,10 +454,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Hackpuc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = H4CKPUC.Hackpuc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackpuc/Hackpuc-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -447,10 +471,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Hackpuc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = H4CKPUC.Hackpuc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hackpuc/Hackpuc-Bridging-Header.h";
 			};
 			name = Release;
 		};
