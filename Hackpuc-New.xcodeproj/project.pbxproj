@@ -29,6 +29,7 @@
 		94541FD61C1C9CA10054D142 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD01C1C9C2D0054D142 /* CoreBluetooth.framework */; };
 		94541FD71C1C9CA60054D142 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94541FD21C1C9C340054D142 /* SystemConfiguration.framework */; };
 		94541FDB1C1C9F520054D142 /* REALMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94541FDA1C1C9F520054D142 /* REALMContact.swift */; };
+		94541FDD1C1CA4B80054D142 /* ContactsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
@@ -88,6 +89,7 @@
 		94541FD21C1C9C340054D142 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		94541FD41C1C9C9A0054D142 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 		94541FDA1C1C9F520054D142 /* REALMContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REALMContact.swift; sourceTree = "<group>"; };
+		94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsDAO.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		94541FC71C1C97D90054D142 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				94541FDC1C1CA4B80054D142 /* ContactsDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */,
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */,
+				94541FDD1C1CA4B80054D142 /* ContactsDAO.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
 				51FF04B81C1CA75A00C4A946 /* MyoConnectPresenter.swift in Sources */,
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
