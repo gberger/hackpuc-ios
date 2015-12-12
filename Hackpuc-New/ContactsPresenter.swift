@@ -23,7 +23,7 @@ class ContactsPresenter: UIViewController {
         self.view = ModelView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib. Teste commit
         
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
             
