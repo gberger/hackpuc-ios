@@ -29,6 +29,7 @@
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
 		F27F50151C1C72B20075636A /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F27F50141C1C72B20075636A /* GeosansLight.ttf */; };
+		F29F7D6D1C1CA50A00767DE1 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */; };
 		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
 		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
@@ -84,6 +85,7 @@
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
 		F27F50121C1C57C80075636A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		F27F50141C1C72B20075636A /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
+		F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +205,7 @@
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 				F27F50121C1C57C80075636A /* LogInView.swift */,
+				F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				94541FDB1C1C9F520054D142 /* REALMContact.swift in Sources */,
 				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
 				F27F50131C1C57C80075636A /* LogInView.swift in Sources */,
+				F29F7D6D1C1CA50A00767DE1 /* ContactsView.swift in Sources */,
 				F27F500F1C1C52EF0075636A /* FP.swift in Sources */,
 				5151EDED1C1C549F004CBF38 /* LogInPresenter.swift in Sources */,
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,

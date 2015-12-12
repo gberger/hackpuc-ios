@@ -29,7 +29,7 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //Delcarações
         var lPar1: UILabel?
-        var tFName: UITextField?
+        var tFName = UITextField()
         
         // Units
         let yOffset:        CGFloat = 50
@@ -42,7 +42,7 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //Aqui se definem as medidas e as posições dos componentes (Note que os nomes dos componentes são bem pequenos, abreviados)
         
-        let lPar1Tx:String = "Olá , antes de fazer a conecao com seu dispositivo vamos configurar os alertas.."
+        let lPar1Tx:String = "Olá , antes de fazer a conexão com seu dispositivo vamos configurar os alertas.."
         
         
         //Label Parte 1
@@ -54,10 +54,10 @@ class LogInView: UIView , UITextFieldDelegate {
         
         //TextField
         //Name
-        let fNameW: CGFloat = 281.0
-        let fNameH: CGFloat = 58.0
-        let fNameX: CGFloat = 63.0
-        let fNameY: CGFloat = 444.0
+        let fNameW: CGFloat = FP.wP() * 281
+        let fNameH: CGFloat = FP.hP() * 69
+        let fNameX: CGFloat = (FP.mW() - fNameW)/2
+        let fNameY: CGFloat = FP.mH() - fNameH - 300
         
         
         //Botao de Continuar
@@ -79,24 +79,27 @@ class LogInView: UIView , UITextFieldDelegate {
         lPar1?.text = lPar1Tx
         lPar1?.font = UIFont(name: "GeosansLight", size: FP.normalFS())
         lPar1?.textColor = FPColor.wColor()
-        lPar1?.textAlignment = .Natural
+        lPar1?.textAlignment = .Center
+        lPar1?.highlighted = true
         lPar1?.numberOfLines = 99
         
         //TextField Name
         //FieldName
         tFName = UITextField(frame: CGRectMake(fNameX, fNameY, fNameW, fNameH))
-        tFName?.placeholder = NSLocalizedString("Seu nome", comment: "Nome")
-        tFName!.font = UIFont.systemFontOfSize(29)
-        tFName!.borderStyle = UITextBorderStyle.RoundedRect
-        tFName!.autocorrectionType = UITextAutocorrectionType.No
-        tFName!.keyboardType = UIKeyboardType.Default
-        tFName!.returnKeyType = UIReturnKeyType.Done
-        tFName!.clearButtonMode = UITextFieldViewMode.WhileEditing;
-        tFName!.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        tFName!.backgroundColor = FPColor.wColor()
-        tFName?.delegate = self
-        tFName?.hidden = false
-        tFName?.alpha = 0
+        tFName.placeholder = NSLocalizedString("         Seu nome", comment: "Nome")
+        //tFName.center = CGPointMake(fNameW, fNameH)
+        tFName.font = UIFont.systemFontOfSize(29)
+        tFName.borderStyle = UITextBorderStyle.RoundedRect
+        //tFName.autocorrectionType = UITextAutocorrectionType.No
+        tFName.keyboardType = UIKeyboardType.Default
+        tFName.returnKeyType = UIReturnKeyType.Done
+        tFName.clearButtonMode = UITextFieldViewMode.WhileEditing;
+        tFName.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        tFName.borderStyle = UITextBorderStyle.Line
+        tFName.borderStyle = UITextBorderStyle.RoundedRect
+        tFName.backgroundColor = FPColor.wColor()
+        tFName.delegate = self
+       
         
         
         //Continue Button
@@ -117,7 +120,7 @@ class LogInView: UIView , UITextFieldDelegate {
         self.addSubview(bCon)
         self.addSubview(pena)
         self.addSubview(lPar1!)
-        self.addSubview(tFName!)
+        self.addSubview(tFName)
         
     }
 }
