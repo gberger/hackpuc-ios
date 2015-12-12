@@ -183,6 +183,7 @@
 				94541FD41C1C9C9A0054D142 /* MyoKit.framework */,
 				51553CD01C1BF9D100424CB8 /* AppDelegate.swift */,
 				5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */,
+				51FF04BD1C1CC94000C4A946 /* Old Files */,
 				94541FC71C1C97D90054D142 /* DAO */,
 				94541FC41C1C97100054D142 /* Protocol */,
 				5151EDE61C1C5374004CBF38 /* Images */,
@@ -220,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
-				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 				F27F50121C1C57C80075636A /* LogInView.swift */,
 				51FF04B51C1CA72000C4A946 /* MyoConnectView.swift */,
 				F29F7D6C1C1CA50A00767DE1 /* ContactsView.swift */,
@@ -231,10 +231,6 @@
 		51553CFF1C1BF9E600424CB8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */,
-				51553D031C1BFB4300424CB8 /* MYOPresenter.swift */,
-				5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */,
-				F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */,
 				5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */,
 				51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */,
 				51FF04B71C1CA75A00C4A946 /* MyoConnectPresenter.swift */,
@@ -264,6 +260,18 @@
 			children = (
 			);
 			name = Router;
+			sourceTree = "<group>";
+		};
+		51FF04BD1C1CC94000C4A946 /* Old Files */ = {
+			isa = PBXGroup;
+			children = (
+				51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */,
+				51553D031C1BFB4300424CB8 /* MYOPresenter.swift */,
+				5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */,
+				F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */,
+				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
+			);
+			name = "Old Files";
 			sourceTree = "<group>";
 		};
 		94541FC41C1C97100054D142 /* Protocol */ = {
