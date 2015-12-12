@@ -94,41 +94,51 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             
             Alamofire.request(.POST, APIURL + "/alerts", parameters: data, encoding: .JSON).responseJSON { response in
                 
-                guard let JSON = response.result.value else {
+                let JSON = response.result.value
+                
+                if JSON == nil {
                   
                     self.waitingResponse = false
                     return
                 }
                 
-                guard let id = JSON["id"] as? String else {
+                let id = JSON!["id"] as? String
+                
+                if id == nil {
                     
                     self.waitingResponse = false
                     return
                 }
                 
-                self.userId = id
+                self.userId = id!
                 
                 Alamofire.request(.POST, self.APIURL + "/alerts/\(self.userId)/fire", parameters: data, encoding: .JSON).responseJSON { response in
                     
-                    guard let JSON2 = response.result.value else {
+                    let JSON2 = response.result.value
+                    
+                    if JSON2 == nil {
                         
                         self.waitingResponse = false
                         return
                     }
                     
-                    guard let fire = JSON2["firing"] as? [String: AnyObject] else {
+                    let fire = JSON2!["firing"] as? [String: AnyObject]
+                    
+                    if fire == nil {
                         
                         self.waitingResponse = false
                         return
                     }
                     
-                    guard let firingId = fire["_id"] as? String else {
+                    let firingId = fire!["_id"] as? String
+                    
+                    if firingId == nil {
                         
                         self.waitingResponse = false
                         return
                     }
                     
-                    self.userFiringId = firingId
+                    self.userFiringId = firingId!
                     self.waitingResponse = false
                     self.sendingInfo = true
                 }
