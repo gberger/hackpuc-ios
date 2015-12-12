@@ -60,8 +60,21 @@ class ContactsView: UIView {
         let cTX: CGFloat = (FP.mW() - cTW)/2
         let cTY: CGFloat = FP.mH() - cTH - 180
         
+        //Back Button
+        let bbW: CGFloat = FP.wP() * 18
+        let bbH: CGFloat = FP.hP() * 32
+        let bbX: CGFloat = (FP.mW() - bbW - 350)/2
+        let bbY: CGFloat = 40
+        
         
         //Creation Part --------------------------*
+        
+        //Back Button
+        let bbImage = UIImage(named: "back.png")! as UIImage
+        let bb = UIButton(type: UIButtonType.System) as UIButton
+        bb.frame = CGRectMake(bbX, bbY, bbW, bbH)
+        bb.setBackgroundImage(bbImage, forState: UIControlState.Normal)
+        bb.addTarget(self, action: "Action:", forControlEvents:UIControlEvents.TouchUpInside)
         
         //Continue Button
         let bCon = UIButton(frame: CGRectMake(bConX, bConY, bConW, bConH))
@@ -89,6 +102,7 @@ class ContactsView: UIView {
         self.addSubview(lTit!)
         self.addSubview(cTable)
         self.addSubview(bCon)
+        self.addSubview(bb)
         
         
     }
