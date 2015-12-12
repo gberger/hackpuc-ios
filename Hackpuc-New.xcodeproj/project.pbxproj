@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */; };
 		5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDE41C1C36A6004CBF38 /* ReadyView.swift */; };
+		5151EDE81C1C5380004CBF38 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5151EDE71C1C5380004CBF38 /* Background.png */; };
+		5151EDEB1C1C5399004CBF38 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151EDEA1C1C5399004CBF38 /* LogInView.swift */; };
 		51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CD01C1BF9D100424CB8 /* AppDelegate.swift */; };
 		51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */; };
 		51553CD81C1BF9D100424CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51553CD71C1BF9D100424CB8 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hackpuc-New-Bridging-Header.h"; sourceTree = "<group>"; };
 		5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOKPresenter.swift; sourceTree = "<group>"; };
 		5151EDE41C1C36A6004CBF38 /* ReadyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyView.swift; sourceTree = "<group>"; };
+		5151EDE71C1C5380004CBF38 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		5151EDEA1C1C5399004CBF38 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		51553CCD1C1BF9D100424CB8 /* Hackpuc-New.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackpuc-New.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51553CD01C1BF9D100424CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5151EDE61C1C5374004CBF38 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5151EDE71C1C5380004CBF38 /* Background.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		51553CC41C1BF9D000424CB8 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,7 @@
 		51553CCF1C1BF9D100424CB8 /* Hackpuc-New */ = {
 			isa = PBXGroup;
 			children = (
+				5151EDE61C1C5374004CBF38 /* Images */,
 				51553CD01C1BF9D100424CB8 /* AppDelegate.swift */,
 				5151EDDF1C1BFDCA004CBF38 /* Hackpuc-New-Bridging-Header.h */,
 				51553D021C1BFA0700424CB8 /* Router */,
@@ -159,6 +172,7 @@
 			children = (
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
 				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
+				5151EDEA1C1C5399004CBF38 /* LogInView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -310,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5151EDE81C1C5380004CBF38 /* Background.png in Resources */,
 				51553CDB1C1BF9D100424CB8 /* LaunchScreen.storyboard in Resources */,
 				51553CD81C1BF9D100424CB8 /* Assets.xcassets in Resources */,
 			);
@@ -390,6 +405,7 @@
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
+				5151EDEB1C1C5399004CBF38 /* LogInView.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
