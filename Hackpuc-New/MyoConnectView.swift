@@ -10,8 +10,11 @@ import Foundation
 
 class MyoConnectView: UIView {
     
+    var delegate: MyoViewProtocol?
     var cInfo: UILabel?
     var myo: UIImageView?
+    
+    var tapGesture = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         
@@ -24,6 +27,8 @@ class MyoConnectView: UIView {
     }
     
     func setup() {
+        
+        tapGesture.addTarget(self, action: Selector("tap:"))
         
         //Background
         let bgView = UIImageView(image: UIImage(named: "Background.png"))
@@ -90,6 +95,8 @@ class MyoConnectView: UIView {
         //Myo
         myo = UIImageView(image: UIImage(named: "MyoOff.png"))
         myo?.frame = CGRectMake(myoX, myoY, myoW, myoH)
+        myo?.addGestureRecognizer(tapGesture)
+        myo?.userInteractionEnabled = true
         
         //Acrescentar views
         self.addSubview(bgView)
@@ -97,5 +104,10 @@ class MyoConnectView: UIView {
         self.addSubview(pena)
         self.addSubview(cInfo!)
         self.addSubview(myo!)
+    }
+    
+    func tap(gesture: UITapGestureRecognizer) {
+        
+        self.delegate?.connectMyo()
     }
 }
