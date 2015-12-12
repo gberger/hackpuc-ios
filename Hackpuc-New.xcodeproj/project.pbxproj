@@ -20,6 +20,7 @@
 		51553CE61C1BF9D100424CB8 /* Hackpuc_NewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CE51C1BF9D100424CB8 /* Hackpuc_NewTests.swift */; };
 		51553CF11C1BF9D100424CB8 /* Hackpuc_NewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */; };
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
+		51FF04B41C1C7AD000C4A946 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */; };
 		F27F500F1C1C52EF0075636A /* FP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F500E1C1C52EF0075636A /* FP.swift */; };
 		F27F50111C1C54450075636A /* FPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50101C1C54450075636A /* FPColor.swift */; };
 		F27F50131C1C57C80075636A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27F50121C1C57C80075636A /* LogInView.swift */; };
@@ -68,6 +69,7 @@
 		51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackpuc_NewUITests.swift; sourceTree = "<group>"; };
 		51553CF21C1BF9D100424CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51553D031C1BFB4300424CB8 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
+		51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27F500E1C1C52EF0075636A /* FP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FP.swift; sourceTree = "<group>"; };
 		F27F50101C1C54450075636A /* FPColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPColor.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */,
 				F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */,
 				5151EDEC1C1C549F004CBF38 /* LogInPresenter.swift */,
+				51FF04B31C1C7AD000C4A946 /* ContactsPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				5151EDEF1C1C5692004CBF38 /* LogInViewProtocol.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
 				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
+				51FF04B41C1C7AD000C4A946 /* ContactsPresenter.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
 				F27F50111C1C54450075636A /* FPColor.swift in Sources */,
 			);
@@ -560,7 +564,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "H4CKPUC.Hackpuc-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -575,7 +581,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Hackpuc-New/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "H4CKPUC.Hackpuc-New";
 				PRODUCT_NAME = "$(TARGET_NAME)";

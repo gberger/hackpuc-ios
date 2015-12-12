@@ -10,8 +10,6 @@
 
 @interface OTNetworkReachabilityMonitor : NSObject
 
-+ (instancetype)sharedInstance;
-
 - (void)invalidate;
 
 

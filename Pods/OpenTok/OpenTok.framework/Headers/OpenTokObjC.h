@@ -12,3 +12,4 @@
 #import <OpenTok/OTError.h>
 #import <OpenTok/OTVideoKit.h>
 #import <OpenTok/OTAudioKit.h>
+#import <OpenTok/OTNetworkStatsKit.h>

@@ -25,7 +25,7 @@
 /**
 * The scaling of the rendered video, as defined by the
 * <OTVideoViewScaleBehavior> enum. The default value is
-* OTVideoViewScaleBehaviorFit. Set it to OTVideoViewScaleBehaviorFill to
+* OTVideoViewScaleBehaviorFill. Set it to OTVideoViewScaleBehaviorFit to
 * have the video shrink, as needed, so that the entire video is visible
 * (with pillarboxing).
 */

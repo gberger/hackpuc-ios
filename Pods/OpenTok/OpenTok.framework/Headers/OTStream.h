@@ -83,6 +83,9 @@ typedef NS_ENUM(int32_t, OTStreamVideoType) {
  * This property can change if a stream published from an
  * iOS device resizes, based on a change in the device orientation, or a change
  * in video resolution occurs.
+ *
+ * For streams published using the scalable video feature, this is set to the
+ * maximum resolution available for the stream.
  */
 @property (readonly) CGSize videoDimensions;
 

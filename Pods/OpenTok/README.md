@@ -4,15 +4,15 @@ OpenTok iOS SDK
 The OpenTok iOS SDK lets you use OpenTok-powered video sessions in apps
 you build for iPad, iPhone, and iPod touch devices.
 
-Apps written with the OpenTok iOS SDK 2.6.1 can interoperate with OpenTok apps
+Apps written with the OpenTok iOS SDK 2.7 can interoperate with OpenTok apps
 written with the following OpenTok SDKs:
 
-* [OpenTok.js 2.4+](http://tokbox.com/developer/sdks/js/)
+* [OpenTok.js 2.5+](http://tokbox.com/developer/sdks/js/)
 
 * [OpenTok Android SDK
-  2.4+](http://tokbox.com/opentok/developer/sdks/android/)
+  2.5+](http://tokbox.com/opentok/developer/sdks/android/)
 
-* [OpenTok iOS SDK 2.4+](http://tokbox.com/developer/sdks/ios/)
+* [OpenTok iOS SDK 2.5+](http://tokbox.com/developer/sdks/ios/)
 
 Using the SDK
 -------------
@@ -53,6 +53,9 @@ Firebase (versions earlier than 2.1.2 -- see
 https://code.google.com/p/webrtc/issues/detail?id=3992) and Google Maps
 (versions earlier than 1.9.0). To fix this issue, download a version of the
 other library that was compiled using XCode 6.0.0 or later.
+
+A beta bitcode version of the OpenTok iOS SDK is avaliable at
+<https://tokbox.com/downloads/opentok-ios-sdk-2.7.1-beta.1>.
 
 See the [release notes](release-notes.md) for information on the latest version
 of the SDK and for a list of known issues.

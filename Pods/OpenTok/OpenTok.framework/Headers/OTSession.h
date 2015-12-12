@@ -21,6 +21,8 @@ typedef NS_ENUM(int32_t, OTSessionConnectionStatus) {
     OTSessionConnectionStatusConnected,
     /** The session is connecting. */
     OTSessionConnectionStatusConnecting,
+    /** The session is reconnecting. */
+    OTSessionConnectionStatusReconnecting,
     /** The session is disconnecting. */
     OTSessionConnectionStatusDisconnecting,
     /** The session has experienced a fatal error.  */
@@ -273,20 +275,20 @@ __attribute__((deprecated("use unsubscribe:error: instead")));
 /**
  * Sends a signal to one or more clients in a session.
  *
- * For information on charges for signaling, see the
- * [OpenTok pricing](http://tokbox.com/pricing) page.
- *
- * See 
+ * See <[OTSession signalWithType:string:connection:retryAfterReconnect:error:]>
+ * and
  * <[OTSessionDelegate session:receivedSignalType:fromConnection:withString:]>.
- *
  *
  * @param type The type of the signal. The type is also set in the
  * <[OTSessionDelegate session:receivedSignalType:fromConnection:withString:]>
  * message. The maximum length of the type string is 128 characters, and it must
  * contain only letters (A-Z and a-z), numbers (0-9), "-", "_", and "~".
+ *
  * @param string The data to send. The limit to the size of data is 8KB.
+ *
  * @param connection A destination OTConnection object.
  * Set this parameter to nil to signal all participants in the session.
+ *
  * @param error If sending a signal fails, this value is set to an OTError
  * object. The OTSessionErrorCode enum (in OTError.h) includes
  * OTSessionInvalidSignalType and OTSessionSignalDataTooLong constants for these
@@ -299,6 +301,53 @@ __attribute__((deprecated("use unsubscribe:error: instead")));
             connection:(OTConnection*)connection
                  error:(OTError**)error;
 
+/**
+* Sends a signal to one or more clients in a session. This version of the method
+* includes a <code>retryAfterReconnect</code> parameter.
+*
+* This method is part of the automatic reconnection beta feature. To participate
+* in the beta program, see the
+* <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta programs</a>
+* page.
+*
+* @param type The type of the signal. The type is also set in the
+* <[OTSessionDelegate session:receivedSignalType:fromConnection:withString:]>
+* message. The maximum length of the type string is 128 characters, and it must
+* contain only letters (A-Z and a-z), numbers (0-9), "-", "_", and "~".
+*
+* See <[OTSession signalWithType:string:connection:retryAfterReconnect:error:]>,
+* <[OTSessionDelegate session:receivedSignalType:fromConnection:withString:]>,
+* and <[OTSessionDelegate sessionDidBeginReconnecting:>].
+*
+* @param string The data to send. The limit to the size of data is 8KB.
+*
+* @param connection A destination OTConnection object.
+* Set this parameter to nil to signal all participants in the session.
+*
+* @param retryAfterReconnect Upon reconnecting to the session, whether to send
+* any signals that were initiated while disconnected. If your client loses its
+* connection to the OpenTok session, due to a drop in network connectivity, the
+* client attempts to reconnect to the session, and the
+* <[OTSessionDelegate sessionDidBeginReconnecting:]> message is sent.
+* By default, signals initiated while disconnected are sent when (and if)
+* the client reconnects to the OpenTok session. You can prevent this by setting
+* the <code>retryAfterReconnect</code> parameter to <code>false</code>.
+* (The default value is <code>true</code>.)
+*
+* @param error If sending a signal fails, this value is set to an OTError
+* object. The OTSessionErrorCode enum (in OTError.h) includes
+* OTSessionInvalidSignalType and OTSessionSignalDataTooLong constants for these
+* errors. Note that success indicates that the options passed into the method
+* are valid and the signal was sent. It does not indicate that the signal was
+* sucessfully received by any of the intended recipients.
+*/
+- (void)signalWithType:(NSString*) type
+                string:(NSString*)string
+            connection:(OTConnection*)connection
+   retryAfterReconnect:(BOOL)retryAfterReconnect
+                 error:(OTError**)error;
+
+/** @name Reporting an issue */
 
 /**
  * Report that your app experienced an issue. You can use the issue ID with the
@@ -457,5 +506,60 @@ archiveStartedWithId:(NSString*)archiveId
  */
 - (void)     session:(OTSession*)session
 archiveStoppedWithId:(NSString*)archiveId;
+
+/** @name Reconnecting to a session */
+
+/**
+ * Sent when the local client has lost its connection to an OpenTok session and
+ * is trying to reconnect. This results from a loss in network connectivity.
+ * If the client can reconnect to the session, the
+ * <[OTSessionDelegate sessionDidReconnect:]> message is sent. Otherwise, if the
+ * client cannot reconnect, the <[OTSessionDelegate sessionDidDisconnect:]>
+ * message is sent.
+ *
+ * In response to this message being sent, you may want to provide a user
+ * interface notification, to let the user know that the app is trying to
+ * reconnect to the session and that audio-video streams are temporarily
+ * disconnected.
+ *
+ * This method is part of the automatic reconnection beta feature.
+ * To participate in the beta program, see the
+ * <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * @param session The <OTSession> instance that sent this message.
+ */
+- (void)sessionDidBeginReconnecting:(OTSession*)session;
+
+/**
+ * Sent when the local client has reconnected to the OpenTok session after its
+ * network connection was lost temporarily. When the connection is lost, the
+ * <[OTSessionDelegate sessionDidBeginReconnecting:]> message is sent, prior to
+ * the <code>[OTSessionDelegate sessionDidReconnect:]</code> messsage.
+ * If the client cannot reconnect to the session, the
+ * <[OTSessionDelegate sessionDidDisconnect:]> message is sent.
+ *
+ * Any existing publishers and subscribers are automatically reconnected when
+ * the client reconnects and this message is sent.
+ *
+ * By default, any signals initiated by the the local client using the
+ * <[OTSession signalWithType:string:connection:error:]> method are sent when
+ * the client reconnects. To prevent any signals initiated while disconnected
+ * from being sent, use the
+ * <[OTSession signalWithType:string:connection:retryAfterReconnect:error:]>
+ * method to send the signal, and set the <code>retryAfterReconnect</code>
+ * parameter to <code>NO</code>. (All signals sent by other clients while your
+ * client was disconnected are received upon reconnecting.)
+ *
+ * This method is part of the automatic reconnection beta feature.
+ * To participate in the beta program, see the
+ * <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * See <[OTSessionDelegate sessionDidBeginReconnecting:]>.
+ *
+ * @param session The <OTSession> instance that sent this message.
+ */
+- (void)sessionDidReconnect:(OTSession*)session;
 
 @end

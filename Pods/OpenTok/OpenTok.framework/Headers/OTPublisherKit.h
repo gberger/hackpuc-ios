@@ -83,9 +83,8 @@ typedef NS_ENUM(int32_t, OTPublisherKitVideoType) {
  *
  * If your application does not require the use of audio or video, it is
  * recommended to set these values rather than use the
- * <[OTPublisherKit publishAudio]> and
- * <[OTPublisherKit publishVideo]>properties, which only temporarily disable
- * the tracks.
+ * <[OTPublisherKit publishAudio]> and <[OTPublisherKit publishVideo]>
+ * properties, which only temporarily disable the tracks.
  *
  * @param delegate The delegate (<OTPublisherKitDelegate>) object for the
  * publisher.
@@ -178,10 +177,10 @@ id<OTPublisherKitAudioLevelDelegate> audioLevelDelegate;
  *   need to implement a custom video capturer for the OTPublisherKit object.
  *   See <[OTPublisherKit videoCapture]>. It is recommended to use a low frame
  *   rate (5 frames per second or lower) with this video type. When using the
- *   screen video type in a session that uses the OpenTok Media Server, you
- *   should set the <[OTPublisherKit audioFallbackEnabled]> property to NO to
- *   disable the audio-only fallback feature, so that the video does not drop
- *   out in subscribers. See [the OpenTok Media
+ *   screen video type in a session that uses the OpenTok Media Server, the
+ *   <[OTPublisherKit audioFallbackEnabled]> property is set to NO by default;
+ *   this disables the audio-only fallback feature, so that the video does not
+ *   drop out in subscribers. See [the OpenTok Media
  *   Router](http://tokbox.com/opentok/tutorials/create-session/#media-mode ).
  *
  * * <code>OTPublisherKitVideoTypeCamera</code> &mdash;
@@ -207,11 +206,17 @@ id<OTPublisherKitAudioLevelDelegate> audioLevelDelegate;
  * that subscriber in order to preserve call quality.
  *
  * The default setting is <code>YES</code> (the audio-fallback feature is
- *  enabled).
+ * enabled) for publishers using the camera. To turn off the audio-fallback
+ * feature, set this property to <code>NO</code> <i>before</i> calling the
+ * <[OTSession publish:error:]> method. However, When using the
+ * screen video type in a session that uses the OpenTok Media Server, the
+ * audioFallbackEnabled property is set to NO by default; this disables the
+ * audio-only fallback feature, so that the video does not drop out in
+ * subscribers.
  *
- * For more information, see
+ * For more information, see <[OTPublisherKit videoType]>,
  * <[OTSubscriberKitDelegate subscriberVideoDisabled:reason:]>,
- * <OTSubscriberVideoEventReason>, and [the OpenTok Media
+ * <OTSubscriberVideoEventReason>, [the OpenTok Media
  * Router](http://tokbox.com/opentok/tutorials/create-session/#media-mode ).
  */
 @property (nonatomic, assign) BOOL audioFallbackEnabled;

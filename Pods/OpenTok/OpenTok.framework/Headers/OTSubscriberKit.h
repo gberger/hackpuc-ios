@@ -6,11 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class OTStream, OTSession, OTConnectionTestResult;
+@class OTStream, OTSession, OTConnectionTestResult,
+OTSubscriberKitVideoNetworkStats, OTSubscriberKitAudioNetworkStats;
 
 @protocol OTVideoRender;
 @protocol OTSubscriberKitDelegate;
 @protocol OTSubscriberKitAudioLevelDelegate;
+@protocol OTSubscriberKitNetworkStatsDelegate;
 
 /**
  * Video enabled and disabled events are accompanied with a reason code, for
@@ -33,7 +35,7 @@ typedef NS_ENUM(int32_t, OTSubscriberVideoEventReason) {
      * The video event was caused by a change to the video stream quality.
      * Stream quality may change due to network conditions or CPU usage
      * on either the subscriber or pubisher.
-     * <p>
+     *
      * This reason is only used in sessions that have the
      * [media mode](http://tokbox.com/opentok/tutorials/create-session/)
      * set to "routed".
@@ -43,10 +45,10 @@ typedef NS_ENUM(int32_t, OTSubscriberVideoEventReason) {
      * is sent. When conditions improve, the video stream resumes, and the
      * <[OTSubscriberKitDelegate subscriberVideoEnabled:reason:]> message is
      * sent.
-     * <p>
+     *
      * When the video stream is dropped, the subscriber continues to receive
      * the audio stream, if there is one.
-     * <p>
+     *
      * When the Subscriber's stream quality deteriorates to a level that
      * is low enough that the video stream is at risk of being disabled, the
      * <[OTSubscriberKitDelegate subscriberVideoDisableWarning:]> message is
@@ -54,7 +56,7 @@ typedef NS_ENUM(int32_t, OTSubscriberVideoEventReason) {
      * message is sent before the
      * <[OTSubscriberKitDelegate subscriberVideoDisabled:reason:]> message is
      * sent.
-     * <p>
+     *
      * You can disable this audio-only fallback feature, by setting the
      * <[OTPublisherKit audioFallbackEnabled]> property to <code>NO</code>
      * for the publisher of the stream.
@@ -96,15 +98,20 @@ typedef NS_ENUM(int32_t, OTSubscriberVideoEventReason) {
 
 /**
  * The <OTSubscriberKitDelegate> object that serves as a delegate,
- * handling events for this OTSubscriber object.
+ * handling basic events for this OTSubscriber object.
+ *
+ * See also <[OTSubscriberKit audioLevelDelegate]> and
+ * <[OTSubscriberKit networkStatsDelegate]>.
  */
 @property(nonatomic, assign) id<OTSubscriberKitDelegate> delegate;
+
+/** @name Working with audio and video */
 
 /**
  * Periodically receives reports of audio levels for this subscriber.
  *
- * This is a separate delegate object from that set as the delegate property
- * (the OTSubscriberKitDelegate object).
+ * This is a separate delegate object from that set as the
+ * <[OTSubscriberKit delegate]> property (the OTSubscriberKitDelegate object).
  *
  * If you do not set this property, the audio sampling subsystem is disabled.
  */
@@ -135,6 +142,64 @@ id<OTSubscriberKitAudioLevelDelegate> audioLevelDelegate;
  * The video renderer for this instance.
  */
 @property(nonatomic, retain) id<OTVideoRender> videoRender;
+
+/**
+ * The preferred resolution for the subscriber's stream. This property only
+ * applies to streams published using the scalable video feature. The subscriber
+ * will use the closest available resolution based on the CPU and bandwidth
+ * constraints.
+ *
+ * Scalable video is a beta feature. To participate in the beta program, see
+ * the <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * Not every resolution is available to a subscriber. When you set the preferred
+ * resolution, the OpenTok iOS SDK picks the best resolution available that
+ * matches your constraints. The resolutions available depend on the maximum
+ * resolution the Publisher sets for the stream, which is set as the
+ * <[OTStream videoDimensions]> property for the stream. Each of the
+ * resolutions available for a stream will use the same aspect ratio.
+ */
+@property(nonatomic) CGSize preferredResolution;
+
+/**
+ * The preferred frame rate for the subscriber's stream. This property only
+ * applies to streams published using the scalable video feature. The subscriber
+ * will use the closest available resolution based on the CPU and bandwidth
+ * constraints.
+ *
+ * Scalable video is a beta feature. To participate in the beta program, see
+ * the <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * The frame rates available are based on the value of the maximum frame rate
+ * available for the stream. When you set the preferred frame rate for the
+ * subscriber, the OpenTok iOS SDK picks the best frame rate available that is
+ * closest to the `preferedFrameRate`, based on the client's bandwidth and CPU
+ * constraints.
+ *
+ * The actual frame rates available depend, dynamically, on network and CPU
+ * resources available to the publisher.
+ */
+@property(nonatomic) float preferredFrameRate;
+
+/** @name Getting audio and video statistics */
+
+/**
+ * The <OTSubscriberKitNetworkStatsDelegate> object that periodically receives
+ * subscriber quality statistics.
+ *
+ * This delegate object is sent messages reporting the following:
+ *
+ * * Total audio and video packets lost
+ * * Total audio and video packets received
+ * * Total audio and video bytes received
+ *
+ * This is a separate delegate object from that set as the
+ * <[OTSubscriberKit delegate]> property (the OTSubscriberKitDelegate object).
+ */
+@property (nonatomic, assign)
+id<OTSubscriberKitNetworkStatsDelegate> networkStatsDelegate;
 
 /** @name Initializing a Subscriber */
 
@@ -272,6 +337,43 @@ id<OTSubscriberKitAudioLevelDelegate> audioLevelDelegate;
  */
 - (void)subscriberVideoDisableWarningLifted:(OTSubscriberKit*)subscriber;
 
+/**
+ * Called when the subscriber's stream has been interrupted.
+ *
+ * In response to this message being sent, you may want to provide a user
+ * interface notification, to let the user know that the audio-video stream is
+ * temporarily disconnected and the app is trying to reconnect to the stream.
+ *
+ * If the client reconnects to the stream, the
+ * <[OTSubscriberKitDelegate subscriberDidReconnectToStream:]> message is sent.
+ * Otherwise, the <[OTSubscriberKitDelegate subscriberVideoDisabled:reason:]>
+ * message is sent.
+ *
+ * This method is part of the automatic reconnection beta feature.
+ * To participate in the beta program, see the
+ * <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * @param subscriber The subscriber that generated this event.
+ */
+- (void)subscriberDidDisconnectFromStream:(OTSubscriberKit*)subscriber;
+
+/**
+ * Sent when the subscriber's stream has resumed, after the
+ * <[OTSubscriberKitDelegate subscriberDidDisconnectFromStream:]> message
+ * is sent.
+ *
+ * This method is part of the automatic reconnection beta feature.
+ * To participate in the beta program, see the
+ * <a href="https://tokbox.com/platform/beta-programs">OpenTok Beta
+ * programs</a> page.
+ *
+ * @param subscriber The subscriber that generated this event.
+ *
+ * See <[OTSessionDelegate sessionDidReconnect:]>.
+ */
+- (void)subscriberDidReconnectToStream:(OTSubscriberKit*)subscriber;
+
 @end
 
 /**
@@ -289,5 +391,39 @@ id<OTSubscriberKitAudioLevelDelegate> audioLevelDelegate;
  */
 - (void)subscriber:(OTSubscriberKit*)subscriber
 audioLevelUpdated:(float)audioLevel;
+
+@end
+
+/**
+ * Used to monitor audio and video statistics for the subscriber. See
+ * <[OTSubscriberKit networkStatsDelegate]>.
+ */
+@protocol OTSubscriberKitNetworkStatsDelegate <NSObject>
+
+@optional
+
+/**
+ * Sent periodically to report audio statistics for the subscriber.
+ *
+ * @param subscriber The subscriber these statistic apply to.
+ *
+ * @param stats An <OTSubscriberKitVideoNetworkStats> object, which has
+ * properties for the video bytes received, video packets lost, and video
+ * packets received for the subscriber.
+ */
+- (void)subscriber:(OTSubscriberKit*)subscriber
+videoNetworkStatsUpdated:(OTSubscriberKitVideoNetworkStats*)stats;
+
+/**
+ * Sent periodically to report video statistics for the subscriber.
+ *
+ * @param subscriber The subscriber these statistic apply to.
+ *
+ * @param stats An <OTSubscriberKitAudioNetworkStats> object, which has
+ * properties for the audio bytes received, audio packets lost, and audio
+ * packets received for the subscriber.
+ */
+- (void)subscriber:(OTSubscriberKit*)subscriber
+audioNetworkStatsUpdated:(OTSubscriberKitAudioNetworkStats*)stats;
 
 @end

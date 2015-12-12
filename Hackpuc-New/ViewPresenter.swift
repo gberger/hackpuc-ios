@@ -12,9 +12,17 @@ import Alamofire
 
 class ViewPresenter: UIViewController, CLLocationManagerDelegate {
     
-    var locationScanInterval = 4.0
     var locationManager: CLLocationManager?
-    var numero = 0
+    
+    var sendingInfo = false
+    var waitingResponse = false
+    
+    var APIURL = "http://6f4ca100.ngrok.com"
+    
+    var userId = ""
+    var userFiringId = ""
+    var userName = "Teste"
+    var userMessage = "TO FUDIDO AQUI GG"
     
     var myView: ReadyView {
         
@@ -27,8 +35,18 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
         
         self.view = ReadyView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         
+        let but = UIButton(frame: CGRectMake(100,100,100,50))
+        but.setTitle("PANICO", forState: .Normal)
+        but.addTarget(self, action: Selector("panic"), forControlEvents: .TouchUpInside)
+        self.myView.addSubview(but)
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func panic() {
+        
+        locationManager?.startUpdatingLocation()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,7 +67,6 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             locationManager?.delegate = self
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.distanceFilter = kCLDistanceFilterNone
-            locationManager?.startUpdatingLocation()
             locationManager?.pausesLocationUpdatesAutomatically = false
             locationManager?.allowsBackgroundLocationUpdates = true
         }
@@ -62,29 +79,66 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
         let lat = locations[locations.count - 1].coordinate.latitude
         let lon = locations[locations.count - 1].coordinate.longitude
         
-        var info = ""
+        var data = ["status": ["latitude": lat, "longitude": lon]] as [String: AnyObject]
         
-        if(UIApplication.sharedApplication().applicationState == UIApplicationState.Active) {
+        if(waitingResponse == true) {
             
-            info = "Running in foreground mode."
+            return
+        }
+        
+        if(sendingInfo == false) {
+            
+            waitingResponse = true
+            
+            data = ["alert": ["name": userName, "contacts": [["name": "Joao Vicente", "number": "+5521995957897"]], "message": userMessage]]
+            
+            Alamofire.request(.POST, APIURL + "/alerts", parameters: data, encoding: .JSON).responseJSON { response in
+                
+                guard let JSON = response.result.value else {
+                  
+                    self.waitingResponse = false
+                    return
+                }
+                
+                guard let id = JSON["id"] as? String else {
+                    
+                    self.waitingResponse = false
+                    return
+                }
+                
+                self.userId = id
+                
+                Alamofire.request(.POST, self.APIURL + "/alerts/\(self.userId)/fire", parameters: data, encoding: .JSON).responseJSON { response in
+                    
+                    guard let JSON2 = response.result.value else {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    guard let fire = JSON2["firing"] as? [String: AnyObject] else {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    guard let firingId = fire["_id"] as? String else {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    self.userFiringId = firingId
+                    self.waitingResponse = false
+                    self.sendingInfo = true
+                }
+            }
             
         } else {
             
-            info = "Running in background mode."
-        }
-        
-        let data = ["latitude": lat, "longitude": lon, "obs": info, "userId": "id"]
-        
-        Alamofire.request(.POST, "http://2bdf1396.ngrok.com", parameters: data as? [String : AnyObject], encoding: .JSON).responseJSON { response in
+            let newURL = self.APIURL + "/alerts/\(self.userId)/fire/\(self.userFiringId)/status"
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-            
-            //Get session ID and token
-            //See if is connected to this session ID
-                //If not, connect
-                //If yes, just proceed
+            Alamofire.request(.POST, newURL, parameters: data, encoding: .JSON)
         }
     }
     
