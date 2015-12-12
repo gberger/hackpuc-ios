@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 class ViewPresenter: UIViewController, CLLocationManagerDelegate {
     
@@ -47,27 +48,33 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.distanceFilter = kCLDistanceFilterNone
             locationManager?.startUpdatingLocation()
+            locationManager?.pausesLocationUpdatesAutomatically = false
+            locationManager?.allowsBackgroundLocationUpdates = true
         }
         
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        let lat = locations[locations.count - 1].coordinate.latitude
+        let lon = locations[locations.count - 1].coordinate.longitude
+        
+        var data: [String: AnyObject]!
         
         if(UIApplication.sharedApplication().applicationState == UIApplicationState.Active) {
             
-            print("Teste \(numero)")
+            data = ["latitude": lat, "longitude": lon, "text": "Foreground Running"]
             numero++
-            print(locations)
             
         } else {
             
-            print("Teste Background \(numero)")
+            data = ["latitude": lat, "longitude": lon, "text": "Background Running"]
             numero++
-            print(locations)
             
         }
         
+        print(data)
+        Alamofire.request(.POST, "http://2bdf1396.ngrok.com", parameters: data, encoding: .JSON)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

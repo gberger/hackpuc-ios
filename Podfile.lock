@@ -1,1 +1,13 @@
+PODS:
+  - Alamofire (3.1.3)
+  - OpenTok (2.6.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1)
+  - OpenTok
+
+SPEC CHECKSUMS:
+  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  OpenTok: 6c094ee06dc954a4327c0a736f494f0eaf35c48c
+
 COCOAPODS: 0.39.0
