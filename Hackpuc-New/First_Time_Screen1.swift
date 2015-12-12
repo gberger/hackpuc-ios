@@ -1,14 +1,14 @@
 //
-//  ReadyView.swift
+//  First_Time_Screen1.swift
 //  Hackpuc-New
 //
-//  Created by Joao Nassar Galante Guedes on 12/12/15.
+//  Created by Tauan Flores on 12/12/15.
 //  Copyright © 2015 Grupo13. All rights reserved.
 //
 
 import Foundation
 
-class ReadyView: UIView {
+class First_Time_Screen1: UIView {
     
     override init(frame: CGRect) {
         
@@ -22,6 +22,6 @@ class ReadyView: UIView {
     
     func setup() {
         
-        print("Ready Drew View")
+        print("Drew View")
     }
 }
