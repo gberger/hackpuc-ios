@@ -11,31 +11,31 @@ import UIKit
 
 class FP: NSObject {
     
-    class func mainWidth() -> CGFloat {
+    class func mW() -> CGFloat {
         
         return UIScreen.mainScreen().bounds.width
         
     }
     
-    class func mainHeight() -> CGFloat {
+    class func mH() -> CGFloat {
         
         return UIScreen.mainScreen().bounds.height
         
     }
     
-    class func wProp() -> CGFloat {
+    class func wP() -> CGFloat {
         
         return UIScreen.mainScreen().bounds.width/414.0
         
     }
     
-    class func hProp() -> CGFloat {
+    class func hP() -> CGFloat {
         
         return UIScreen.mainScreen().bounds.height/736.0
         
     }
     
-    class func cornerRadius() -> CGFloat {
+    class func cRa() -> CGFloat {
         
         return 0.0//CGFloat(Int(2 * wProp()))
         
