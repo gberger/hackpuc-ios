@@ -10,7 +10,9 @@ import UIKit
 import CoreLocation
 import Alamofire
 
-class ViewPresenter: UIViewController, CLLocationManagerDelegate {
+class ViewPresenter: UIViewController, CLLocationManagerDelegate, OTPublisherDelegate, OTSessionDelegate {
+    
+    var session: OTSession?
     
     var locationManager: CLLocationManager?
     
@@ -47,6 +49,44 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
     func panic() {
         
         locationManager?.startUpdatingLocation()
+        self.myView.backgroundColor = UIColor.redColor()
+    }
+    
+    //STREAM
+    
+    func publisher(publisher: OTPublisherKit!, didFailWithError error: OTError!) {
+        
+        print("*******ERRO PUBLISH DID FAIL WITH ERROR")
+        print(error)
+    }
+    
+    //SESSION
+    
+    func sessionDidConnect(session: OTSession!) {
+        
+        let publisher = OTPublisher(delegate: self, name: "AudioStream", audioTrack: true, videoTrack: false)
+        session.publish(publisher, error: nil)
+    }
+    
+    func sessionDidDisconnect(session: OTSession!) {
+        
+        print("AudioStream Disconnected")
+    }
+    
+    func session(session: OTSession!, didFailWithError error: OTError!) {
+        
+        print("*******ERRO SESSION DID FAIL WITH ERROR")
+        print(error)
+    }
+    
+    func session(session: OTSession!, streamCreated stream: OTStream!) {
+        
+        print("Stream Created")
+    }
+    
+    func session(session: OTSession!, streamDestroyed stream: OTStream!) {
+        
+        print("Stream Destroyed")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -90,7 +130,7 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
             
             waitingResponse = true
             
-            data = ["alert": ["name": userName, "contacts": [["name": "Joao Vicente", "number": "+5521995957897"]], "message": userMessage]]
+            data = ["alert": ["name": userName, "contacts": [["name": "Joao Vicente", "number": "+5521996960420"]], "message": userMessage]]
             
             Alamofire.request(.POST, APIURL + "/alerts", parameters: data, encoding: .JSON).responseJSON { response in
                 
@@ -138,6 +178,32 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
                         return
                     }
                     
+                    let openTok = JSON2!["openTok"] as? [String: AnyObject]
+                    
+                    if openTok == nil {
+
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    let sessionId = openTok!["sessionId"] as? String
+                    
+                    if sessionId == nil {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    let token = openTok!["token"] as? String
+                    
+                    if token == nil {
+                        
+                        self.waitingResponse = false
+                        return
+                    }
+                    
+                    self.session = OTSession(apiKey: "45435402", sessionId: sessionId, delegate: self)
+                    self.session?.connectWithToken(token, error: nil)
                     self.userFiringId = firingId!
                     self.waitingResponse = false
                     self.sendingInfo = true
@@ -154,6 +220,7 @@ class ViewPresenter: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         
+        print("*******ERRO LOCATION MANAGER")
         print(error)
     }
     
