@@ -16,6 +16,8 @@
 		51553CE61C1BF9D100424CB8 /* Hackpuc_NewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CE51C1BF9D100424CB8 /* Hackpuc_NewTests.swift */; };
 		51553CF11C1BF9D100424CB8 /* Hackpuc_NewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553CF01C1BF9D100424CB8 /* Hackpuc_NewUITests.swift */; };
 		51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51553D031C1BFB4300424CB8 /* MYOPresenter.swift */; };
+		F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */; };
+		F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */; };
 		FD6E36802F7328C2BF609B2C /* Pods_Hackpuc_New.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		51553CF21C1BF9D100424CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51553D031C1BFB4300424CB8 /* MYOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOPresenter.swift; sourceTree = "<group>"; };
 		973125A1E0CC23EB01646F52 /* Pods_Hackpuc_New.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackpuc_New.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5151EDE41C1C36A6004CBF38 /* ReadyView.swift */,
+				F2F5F1B81C1C3BA7000C3BD3 /* ModelView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				51553CD21C1BF9D100424CB8 /* ViewPresenter.swift */,
 				51553D031C1BFB4300424CB8 /* MYOPresenter.swift */,
 				5151EDE21C1BFE19004CBF38 /* TOKPresenter.swift */,
+				F2F5F1BA1C1C3BCE000C3BD3 /* ModelPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -378,10 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F5F1B91C1C3BA7000C3BD3 /* ModelView.swift in Sources */,
 				51553CD31C1BF9D100424CB8 /* ViewPresenter.swift in Sources */,
 				5151EDE51C1C36A6004CBF38 /* ReadyView.swift in Sources */,
 				51553D041C1BFB4300424CB8 /* MYOPresenter.swift in Sources */,
 				51553CD11C1BF9D100424CB8 /* AppDelegate.swift in Sources */,
+				F2F5F1BB1C1C3BCE000C3BD3 /* ModelPresenter.swift in Sources */,
 				5151EDE31C1BFE19004CBF38 /* TOKPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
